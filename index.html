@@ -18,27 +18,39 @@
         <div class="herobg position-relative">
           <div class="clr"> 
             <div class="container">
-              <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 ">
-                <div class="htext">
+              <!-- collapse nav -->
+               <div class="mdnav">
+                <div class="htext ">
                   <a href="index.html" class="text-decoration-none">
-                    <h2 class="fw-bold text-light">Dewi</h2>
+                    <h2 class="fw-bold text-light ms-lg-3 ms-md-3">Dewi</h2>
                   </a>
                 </div>
-                <!-- lg navbar -->
-                  <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-lg-0 mb-md-0">
+                <!-- md nav -->
+                 <div class="menu"></div>
+               </div>
+
+              <header class="d-flex flex-wrap align-items-center fixed-top justify-content-md-between pt-lg-3 pt-md-3 pt-sm-2 pt-2 mb-lg-4 mb-md-4 mb-sm-3 bg-dark">
+                <div class="htext ">
+                  <a href="index.html" class="text-decoration-none">
+                    <h2 class="fw-bold text-light ms-lg-3 ms-md-3">Dewi</h2>
+                  </a>
+                </div>
+                <!-- lg main nav -->
+                  <ul class="nav mb-2 align-items-center mb-lg-0 mb-md-0 me-lg-3 me-md-3">
                     <li><a href="index.html" class="nav-link px-2 text-light active">Home</a></li>
                     <li><a href="#about" class="nav-link px-2 text-light">About</a></li>
                     <li><a href="#service" class="nav-link px-2 text-light">Services</a></li>
                     <li><a href="#" class="nav-link px-2 text-light">Porfolio</a></li>
                     <li><a href="#" class="nav-link px-2 text-light">Team</a></li>
+                    <!-- dropdown -->
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle text-white" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
                       <ul class="dropdown-menu" aria-labelledby="dropdown03">
                         <li><a class="dropdown-item text-dark" href="#">Dropdown1</a></li>
                         <!-- nested dropdown -->
                         <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle text-dark" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                          <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                          <a class="nav-link dropdown-toggle text-dark" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                          <ul class="dropdown-menu" aria-labelledby="dropdown04">
                             <li><a class="dropdown-item text-dark" href="#">Dropdown1</a></li>
                             <li><a class="dropdown-item text-dark" href="#">Dropdown2</a></li>
                             <li><a class="dropdown-item text-dark" href="#">Dropdown3</a></li>
@@ -51,22 +63,20 @@
                       </ul>
                     </li>
                     <li><a href="#" class="nav-link px-2 text-light">Contact</a></li>
-                    <button type="button" class="btn btn-outline-light me-2 text-white">Get Started</button>
+                    <button type="button" class="btn btn-outline-light me-3 text-white">Get Started</button>
                   </ul>
                   <!-- navbar end -->
                 </header>
+                <!-- header ends -->
                 <!-- banner -->
                 <div class="container">
                   <div class="text text-center py-lg-5 py-md-5 py-sm-3 py-3 my-lg-5 my-md-5 my-sm-4 my-3 text-white">
                     <h1 class="fw-bold">PLAN. LAUNCH. GROW.</h1>
                       <p>We are team of talented designers making websites with Bootstrap</p>
-                        <button type="button" class="bttn btn-outline-light me-2 text-white">Get Started</button>
-                          <button type="button" class="btn btn-outline-danger">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path>
-                            <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445"></path>
-                            </svg>
-                            Button
+                        <button type="button" class="bttn btn-outline-light me-2 text-white">
+                          <a href="#about" class="text-decoration-none text-white">Get Started</a></button>
+                          <button type="button" class="wbtn">
+                            <i class="bi bi-play-circle bticon me-2"></i> Watch Video
                           </button>
                   </div>
                 </div>
