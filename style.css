@@ -1,8 +1,12 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 @font-face {
     font-family: raleway itlaic;
     src: url(./fonts/raleway_5.1.1_cyrillic-100-italic.ttf);
 }
-
 
 *{
     padding: 0;
@@ -56,6 +60,7 @@
 .text p{
     font-family: raleway itlaic;
     font-size: 25px;
+    color: #D8DADB;
 }
 
 .bttn{
@@ -98,6 +103,12 @@
     font-family: raleway itlaic;
 }
 
+.cip p{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+}
 .ptext{
     color: #A2A2A2;
     font-size: 16px;
@@ -148,6 +159,11 @@
 }
 
 /* card */
+.client{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+}
+
 #card{
     background-color: #EFF2F8;
 }
@@ -270,6 +286,12 @@
 }
 
 /* features section */
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+}
+
 .card-body h4 {
     font-family: raleway itlaic;
     font-size: 21px;
@@ -313,3 +335,61 @@
     background-color: #F1F4FA;
 }
 
+/* media queries 768px*/
+@media screen and (max-width: 768px){
+    .blist{
+        color: #d33131;
+        font-size: 30px;
+    }
+
+    .mdnav{
+        background-color: #ffff;
+        color: #444444;
+        font-size: 20px;
+        top: 50px;
+        border-radius: 10px;
+        margin: 10px 50px 0px 10px;
+    }
+
+    /* nav */
+    .nav{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        padding: 10px 15px;
+    }
+
+    .nav-link:hover {
+        color: #494949;
+    }
+
+    .nav li a{
+        color: #494949;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 18px;
+    }
+
+    /* card */
+    .cardp{
+        padding: 30px 25px 40px 25px;
+    }
+
+    .simg3{
+        padding-top: 70px;
+    }
+
+    .card-body {
+        padding: 5px 55px;
+    }
+
+    /* Clients */
+    .client{
+        grid-template-columns: auto auto auto;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+}

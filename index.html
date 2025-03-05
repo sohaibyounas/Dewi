@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./icons/favicon.png" type="image/x-icon">
-
   </head>
   <body>
     <!-- hero section -->
@@ -19,29 +18,15 @@
           <div class="clr"> 
             <div class="container">
               <!-- collapse nav -->
-               <div class="mdnav">
-                <div class="htext ">
-                  <a href="index.html" class="text-decoration-none">
-                    <h2 class="fw-bold text-light ms-lg-3 ms-md-3">Dewi</h2>
-                  </a>
-                </div>
-                <!-- md nav -->
-                 <div class="menu"></div>
-               </div>
-
-              <header class="d-flex flex-wrap align-items-center fixed-top justify-content-md-between pt-lg-3 pt-md-3 pt-sm-2 pt-2 mb-lg-4 mb-md-4 mb-sm-3 bg-dark">
-                <div class="htext ">
-                  <a href="index.html" class="text-decoration-none">
-                    <h2 class="fw-bold text-light ms-lg-3 ms-md-3">Dewi</h2>
-                  </a>
-                </div>
-                <!-- lg main nav -->
-                  <ul class="nav mb-2 align-items-center mb-lg-0 mb-md-0 me-lg-3 me-md-3">
-                    <li><a href="index.html" class="nav-link px-2 text-light active">Home</a></li>
-                    <li><a href="#about" class="nav-link px-2 text-light">About</a></li>
-                    <li><a href="#service" class="nav-link px-2 text-light">Services</a></li>
-                    <li><a href="#" class="nav-link px-2 text-light">Porfolio</a></li>
-                    <li><a href="#" class="nav-link px-2 text-light">Team</a></li>
+               <!-- <div class="mdnav d-lg-none d-md-block d-sm-block d-block fixed-top justify-content-between "> -->
+                <div class="mdnav d-lg-none d-md-none d-sm-none d-none fixed-top justify-content-between "></div>
+                <!-- <div class="midnav"> -->
+                  <ul class="nav mb-lg-0 mb-md-0 me-lg-3 me-md-3 d-md-none d-sm-none d-none">
+                    <li><a href="index.html" class="nav-link px-2 active  mb-2" style="color: orangered;">Home</a></li>
+                    <li><a href="#about" class="nav-link px-2 mb-2">About</a></li>
+                    <li><a href="#service" class="nav-link px-2 mb-2">Services</a></li>
+                    <li><a href="#" class="nav-link px-2 mb-2">Porfolio</a></li>
+                    <li><a href="#" class="nav-link px-2">Team</a></li>
                     <!-- dropdown -->
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle text-white" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
@@ -63,8 +48,52 @@
                       </ul>
                     </li>
                     <li><a href="#" class="nav-link px-2 text-light">Contact</a></li>
-                    <button type="button" class="btn btn-outline-light me-3 text-white">Get Started</button>
                   </ul>
+                <!-- </div> -->
+               </div>
+              <!-- collapse nav ends -->
+              <header class="d-flex align-items-center fixed-top justify-content-between pt-lg-3 pt-md-3 pt-sm-2 pt-2 mb-lg-4 mb-md-4 mb-sm-3">
+                <!-- logo -->
+                <div class="htext ">
+                  <a href="index.html" class="text-decoration-none">
+                    <h2 class="fw-bold text-light ms-lg-3 ms-md-3">Dewi</h2>
+                  </a>
+                </div>
+                <!-- lg main nav -->
+                 <div class="lg d-lg-block d-md-none d-sm-none d-none  ms-auto">
+                   <ul class="nav align-items-center mb-lg-0 mb-md-0 me-lg-3 me-md-3">
+                     <li><a href="index.html" class="nav-link px-2 text-light active">Home</a></li>
+                     <li><a href="#about" class="nav-link px-2 text-light">About</a></li>
+                     <li><a href="#service" class="nav-link px-2 text-light">Services</a></li>
+                     <li><a href="#" class="nav-link px-2 text-light">Porfolio</a></li>
+                     <li><a href="#" class="nav-link px-2 text-light">Team</a></li>
+                     <!-- dropdown -->
+                     <li class="nav-item dropdown">
+                       <a class="nav-link dropdown-toggle text-white" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                       <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                         <li><a class="dropdown-item text-dark" href="#">Dropdown1</a></li>
+                         <!-- nested dropdown -->
+                         <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle text-dark" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                           <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                             <li><a class="dropdown-item text-dark" href="#">Dropdown1</a></li>
+                             <li><a class="dropdown-item text-dark" href="#">Dropdown2</a></li>
+                             <li><a class="dropdown-item text-dark" href="#">Dropdown3</a></li>
+                             <li><a class="dropdown-item text-dark" href="#">Dropdown4</a></li>
+                           </ul>
+                         </li>
+                         <li><a class="dropdown-item text-dark" href="#">Dropdown2</a></li>
+                         <li><a class="dropdown-item text-dark" href="#">Dropdown3</a></li>
+                         <li><a class="dropdown-item text-dark" href="#">Dropdown4</a></li>
+                       </ul>
+                     </li>
+                     <li><a href="#" class="nav-link px-2 text-light">Contact</a></li>
+                   </ul>
+                 </div>
+                 <div class="mi">
+                  <button type="button" class="btn btn-outline-light me-3 text-white">Get Started</button>
+                  <i class="bi bi-list blist d-lg-none"></i>
+                </div>
                   <!-- navbar end -->
                 </header>
                 <!-- header ends -->
@@ -90,7 +119,7 @@
     <section id="about">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-6 col-md-12 col-sm-12 col-12">
             <h4 class="title fw-bold pt-lg-5 pt-md-5 pt-sm-4 pt-4 pb-lg-3 pb-md-3 pb-sm-2 pb-2">
               Voluptatem dignissimos provident laboris nisi ut aliquip ex ea commodo</h4>
             <div class="img1">
@@ -101,7 +130,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 px-5">
+          <div class="col-lg-6 col-md-12 col-sm-12 col-12 px-5">
             <p class="ptext pt-lg-5 pt-md-5 pt-sm-4 pt-4 ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
@@ -128,7 +157,7 @@
       <div class="container">
         <div class="row py-lg-5 py-md-5 py-sm-3 py-3 my-lg-3">
           <!-- card 1 -->
-          <div class="col-md-3 mb-3 mb-sm-0">
+          <div class="col-lg-3 colmd-3 col-sm-6 col-12 mb-3 mb-sm-4">
             <div class="card border-0 rounded-0 shadow">
               <div class="card-body d-flex align-items-center gap-4">
                 <span><i class="bi bi-emoji-smile cdbi"></i></span>
@@ -140,7 +169,7 @@
             </div>
           </div>
           <!-- card 2 -->
-          <div class="col-md-3 mb-3 mb-sm-0">
+          <div class="col-lg-3 colmd-3 col-sm-6 col-12 mb-3 mb-sm-4">
             <div class="card border-0 rounded-0 shadow">
               <div class="card-body d-flex align-items-center gap-4">
                 <span><i class="bi bi-journal-richtext cdbi"></i></span>
@@ -152,7 +181,7 @@
             </div>
           </div>
           <!-- card 3 -->
-          <div class="col-md-3 mb-3 mb-sm-0">
+          <div class="col-lg-3 colmd-3 col-sm-6 col-12 mb-3 mb-sm-4">
             <div class="card border-0 rounded-0 shadow">
               <div class="card-body d-flex align-items-center gap-4">
                 <span><i class="bi bi-headset cdbi"></i></span>
@@ -164,7 +193,7 @@
             </div>
           </div>
           <!-- card 4 -->
-          <div class="col-md-3 mb-3 mb-sm-0">
+          <div class="col-lg-3 colmd-3 col-sm-6 col-12 mb-3 mb-sm-4">
             <div class="card border-0 rounded-0 shadow">
               <div class="card-body d-flex align-items-center gap-4">
                 <span><i class="bi bi-people cdbi"></i></span>
@@ -185,13 +214,13 @@
     <section id="service">
       <div class="container">
         <div class="row">
-          <div class="svtext">
+          <div class="svtext pt-lg-0 pt-md-5 pt-sm-5 pt-3 mt-md-0 mt-sm-2 mt-2">
             <p class="sub-title d-flex align-items-center">SERVICES</p>
               <h2 class="main-title fw-bold">FEATURED SERVICES</h2>
           </div>
           <div class="images row py-lg-3 py-md-3 py-sm-2 py-2 mb-lg-5 mb-md-5 mb-sm-3 mb-3">
           <!-- image1 -->
-          <div class="service-images col-md-4 py-lg-5 py-md-5 py-sm-3 py-3 my-lg-3 position-relative">
+          <div class="service-images col-md-4 py-lg-5 py-md-5 py-sm-3 py-3 my-lg-3 position-relative col-md-6 col-sm-6 col-12">
             <div class="simg1">
               <img src="./images/services-1.jpg" alt="service-1" class="service1 img-fluid rounded-3">
             </div>
@@ -200,7 +229,7 @@
               <div class="icon">
                 <i class="bi bi-activity icn"></i>
               </div>
-              <div class="card-body card-txt">
+              <div class="card-body card-txt cardp">
                 <h5 class="card-title fw-bold px-5 pt-lg-4 pt-md-4 pt-sm-3 pt-3">Nesciunt Mete</h5>
                   <p class="card-text pt-lg-3 pt-md-3 pt-sm-2 pt-2">
                     Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis.</p>
@@ -209,7 +238,7 @@
           </div>
 
             <!-- image2 -->
-            <div class="service-images col-md-4 py-lg-5 py-md-5 py-sm-3 py-3 my-lg-3 position-relative">
+            <div class="service-images col-md-4 py-lg-5 py-md-5 py-sm-3 py-3 my-lg-3 position-relative col-md-6 col-sm-6 col-12">
               <div class="simg2">
                 <img src="./images/services-2.jpg" alt="service-2" class="service1 img-fluid rounded-3">
               </div>
@@ -227,7 +256,7 @@
             </div>
   
             <!-- image3 -->
-            <div class="service-images col-md-4  py-lg-5 py-md-5 py-sm-3 py-3 my-lg-3 position-relative">
+            <div class="service-images col-md-4  py-lg-5 py-md-5 py-sm-3 py-3 my-lg-3 position-relative col-md-6 col-sm-6 col-12 mt-sm-5">
               <div class="simg3">
                 <img src="./images/services-3.jpg" alt="service-2" class="service1 img-fluid rounded-3">
               </div>
@@ -254,48 +283,36 @@
       <div class="bg-color mt-lg-5 mt-md-5 mt-sm-3 mt-3">
         <div class="container">
           <div class="row">
-            <div class="client d-flex py-lg-5 py-md-5 py-sm-3 py-3 ">
+            <div class="client py-lg-5 py-md-5 py-sm-3 py-3 ">
               <!-- cimg1 -->
-              <div class="col-lg-2">
                 <div class="cimg1">
                   <img src="./clients/client-1.png" alt="client-1" class="img-fluid" >
                 </div>
-              </div>
   
               <!-- cimg2 -->
-              <div class="col-lg-2">
                 <div class="cimg1">
                   <img src="./clients/client-2.png" alt="client-2" class="img-fluid" >
                 </div>
-              </div>
   
               <!-- cimg3 -->
-              <div class="col-lg-2">
                 <div class="cimg1">
                   <img src="./clients/client-3.png" alt="client-3" class="img-fluid" >
                 </div>
-              </div>
   
               <!-- cimg4 -->
-              <div class="col-lg-2">
                 <div class="cimg1">
                   <img src="./clients/client-4.png" alt="client-4" class="img-fluid" >
                 </div>
-              </div>
   
               <!-- cimg5 -->
-              <div class="col-lg-2">
                 <div class="cimg1">
                   <img src="./clients/client-5.png" alt="client-5" class="img-fluid" >
                 </div>
-              </div>
   
               <!-- cimg6 -->
-              <div class="col-lg-2">
                 <div class="cimg1">
                   <img src="./clients/client-6.png" alt="client-6" class="img-fluid" >
                 </div>
-              </div>
               <!-- client images ends -->
             </div>
           </div>
@@ -310,48 +327,42 @@
         <div class="feature">
           <div class="row py-lg-5 py-md-5 py-sm-3 py-3 my-lg-3">
             <!-- feature card 1 -->
-            <div class="col-md-3 mb-3 mb-sm-0">
+             <div class="grid">
               <div class="card border-0 rounded-0 shadow ftcrd">
                 <div class="card-body d-flex align-items-center gap-4">
                   <span><i class="bi bi-binoculars cdb"></i></span>
                   <div>
-                    <h4 class="card-title fw-bold">
+                    <h4 class="card-title fw-bold d-lg-block d-md-none d-sm-none d-none">
                       Modi sit est dela pireda nest</h4>
                   </div>
                 </div>
               </div>
-            </div>
             <!-- card 2 -->
-            <div class="col-md-3 mb-3 mb-sm-0">
               <div class="card rounded-0 shadow">
                 <div class="card-body d-flex align-items-center gap-4">
                   <span><i class="bi bi-box-seam cdb"></i></span>
                   <div>
-                    <h4 class="card-title fw-bold">
+                    <h4 class="card-title fw-bold d-lg-block d-md-none d-sm-none d-none">
                       Unde praesenti mara setra le</h4>
                   </div>
                 </div>
               </div>
-            </div>
             <!-- card 3 -->
-            <div class="col-md-3 mb-3 mb-sm-0">
               <div class="card rounded-0 shadow">
                 <div class="card-body d-flex align-items-center gap-4">
                   <span><i class="bi bi-brightness-high cdb"></i></span>
                   <div>
-                    <h4 class="card-title fw-bold">
+                    <h4 class="card-title fw-bold d-lg-block d-md-none d-sm-none d-none">
                       Pariatur explica nitro dela</h4>
                   </div>
                 </div>
               </div>
-            </div>
             <!-- card 4 -->
-            <div class="col-md-3 mb-3 mb-sm-0">
               <div class="card rounded-0 shadow">
                 <div class="card-body d-flex align-items-center gap-4">
                   <span><i class="bi bi-command cdb"></i></span>
                   <div>
-                    <h4 class="card-title fw-bold">
+                    <h4 class="card-title fw-bold d-lg-block d-md-none d-sm-none d-none">
                       Nostrum qui dile node</h4>
                   </div>
                 </div>
@@ -363,7 +374,7 @@
           <!-- feature para area-->
           <div class="feature-area mb-lg-5 mb-md-5 mb-sm-3 mb-3">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-md-2 order-sm-2">
                 <h4 class="title fw-bold pt-lg-5 pt-md-5 pt-sm-4 pt-4 pb-lg-3 pb-md-3 pb-sm-2 pb-2">
                   Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h4>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -374,7 +385,7 @@
                   </div>
                   <p class="para5">Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
               </div>
-              <div class="col-md-6  d-flex align-items-center">
+              <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-md-1 order-sm-1 d-flex align-items-center">
                 <div class="featr">
                   <img src="./images/working-1.jpg" alt="working-1" class="img-fluid" >
                 </div>
