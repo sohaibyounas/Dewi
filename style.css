@@ -171,6 +171,7 @@
 .bi{
     color: #ffff;
     font-size: 30px;
+    cursor: pointer;
 }
 
 .cdbi{
@@ -360,6 +361,18 @@
 .mi{
     display: flex;
     align-items: center;
+}
+
+/* headder color change */
+#main-header {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+/* Scrolled state */
+#main-header.scrolled {
+    background-color: #ffffff; /* or any color you prefer */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* optional shadow for better visibility */
 }
 
 

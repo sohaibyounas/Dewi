@@ -1,5 +1,6 @@
+// icon click sm nav show/hide
 function headernav() {
-  var nav = document.getElementById("smnav");
+  let nav = document.getElementById("smnav");
   if (nav.style.display === "block") {
     nav.style.display = "none";
   } else {
@@ -7,3 +8,14 @@ function headernav() {
   }
   console.log(nav.style.display);
 }
+
+
+// nav bg-color 
+window.onscroll = function() {
+    let mheader = document.getElementById("main-header");
+    if (window.scrollY > 10){
+        header.classList.add('scrolled')
+    }else{
+        header.classList.remove('scrolled')
+    };
+};
