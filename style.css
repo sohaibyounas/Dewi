@@ -5,6 +5,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* fonts end */
 
 *{
@@ -25,8 +27,35 @@
 /* the nav */
 .test{
     display: flex;
+    align-items: center;
 }
 
+.nav-link:hover {
+    color: #494949;
+}
+
+.nav li a{
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+/* mi button/icon */
+.mi{
+    display: flex;
+    align-items: center;
+}
+
+/* dwei */
+.htext h2{
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    font-style: normal;
+}
+      
 /* clr */
 .clr{
     background: #00000096;
@@ -57,13 +86,19 @@
 }
 
 .text h1{
-    font-family: raleway itlaic;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-style: normal;
     font-size: 48px;
+    line-height: 58px;
 }
 
 .text p{
-    font-family: raleway itlaic;
-    font-size: 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 36px;
     color: #D8DADB;
 }
 
@@ -76,7 +111,7 @@
 }
 
 .bttn:hover{
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease-in-out;
     cursor: pointer;
 }
 
@@ -350,22 +385,7 @@
     margin: 10px 10px 0px 10px;
 }
 
-.nav-link:hover {
-    color: #494949;
-}
 
-.nav li a{
-    color: #494949;
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 18px;
-}
-
-.mi{
-    display: flex;
-    align-items: center;
-}
 
 /* headder color change */
 #main-header {
@@ -375,8 +395,8 @@
 
 /* Scrolled state */
 #main-header.scrolled {
-    background-color: #ffffff; /* or any color you prefer */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* optional shadow for better visibility */
+    background-color: #ffffff; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 

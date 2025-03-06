@@ -10,7 +10,7 @@ function headernav() {
 }
 
 
-// nav bg-color 
+// nav bg-color on scroll 
 window.onscroll = function() {
     let mheader = document.getElementById("main-header");
     if (window.scrollY > 10){
