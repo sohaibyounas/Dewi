@@ -26,15 +26,36 @@
     height: 100vh;
 }
 
-/* the nav */
-.test{
-    display: flex;
-    align-items: center;
-    padding: 10px 0px 0px 12px;
+/* navbar underline effect*/
+.nav li{
+    position: relative;
+}
+
+.nav li::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: orangered;
+    transition: width 0.3s ease;
+
+}
+
+.nav li:hover::before {
+    width: 100%;
+    transition: width 0.3s ease;
 }
 
 .nav{
     gap: 19px;
+}
+
+.test{
+    display: flex;
+    align-items: center;
+    padding: 10px 0px 0px 12px;
 }
 
 /* ai code */
@@ -311,7 +332,7 @@
     color: #ffff;
 }
 
-/* Animation keyframes for fade and scale */
+/* Animation keyframes for fade and scale play button */
 @keyframes fadeScaleIn {
     0% {
         opacity: 0;
