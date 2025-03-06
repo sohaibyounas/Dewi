@@ -28,7 +28,7 @@
 .test{
     display: flex;
     align-items: center;
-    padding: 5px;
+    padding: 10px 0px 0px 12px;
 }
 
 .nav-link:hover {
@@ -41,6 +41,7 @@
     font-style: normal;
     font-size: 13px;
     line-height: 20px;
+    text-transform: uppercase;
 }
 
 /* mi button/icon */
@@ -112,14 +113,16 @@
 .bttn{
     background-color: orangered;
     border-radius: 4px;
-    padding: 8px 26px;
+    padding: 10px 24px;
     border: none;
-    transition: background-color 0.3s ease;
+    display: inline-block;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
 }
 
 .bttn:hover{
     transition: background-color 0.3s ease-in-out;
-    cursor: pointer;
+    background-color: rgba(255, 68, 0, 0.767);
 }
 
 .wbtn{
@@ -133,13 +136,23 @@
     align-items: center;
 }
 
-.wbtn:hover{
+.wbtn h5{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffff;
+}
+
+.wbtn h5:hover{
     color: #FF4500;
     transition: background-color 0.3s ease;
 }
 
 .bticon{
     font-size: 30px !important;
+    color: orangered !important;
 }
 
 /* about section */
@@ -402,7 +415,6 @@
 /* Scrolled state */
 #main-header.scrolled {
     background-color: rgba(21, 34, 43, 0.85);
-    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
 }
 
 
