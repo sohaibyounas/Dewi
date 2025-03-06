@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./icons/favicon.png" type="image/x-icon">
   </head>
@@ -15,10 +16,10 @@
     <section id="hero">
         <!-- hero bg image -->
         <div class="herobg position-relative">
-          <div class="clr"> 
+          <div class="clr" data-aos="fade-up"> 
             <div class="container">
               <!-- collapse nav -->
-               <div class="mdnav fixed-top " id="smnav">
+               <div class="mdnav fixed-top" id="smnav">
                 <div class="midnav">
                   <ul class="nav mb-lg-0 mb-md-0 me-lg-3 me-md-3 d-lg-none d-md-block d-sm-block d-block">
                     <li><a href="index.html" class="nav-link px-2 active mb-2" style="color: orangered;">Home</a></li>
@@ -64,32 +65,33 @@
                       <!-- lg main nav -->
                        <div class="lg d-lg-block d-md-none d-sm-none d-none ms-auto">
                          <ul class="nav align-items-center mb-lg-0 mb-md-0 me-lg-3 me-md-3">
-                           <li><a href="index.html" class="nav-link px-2 text-light active">Home</a></li>
-                           <li><a href="#about" class="nav-link px-2 text-light">About</a></li>
-                           <li><a href="#service" class="nav-link px-2 text-light">Services</a></li>
-                           <li><a href="#" class="nav-link px-2 text-light">Porfolio</a></li>
-                           <li><a href="#" class="nav-link px-2 text-light">Team</a></li>
-                           <!-- dropdown -->
+                           <li class="active"><a href="#hero" class="nav-link px-2 text-light">HOME</a></li>
+                           <li><a href="#about" class="nav-link px-2 text-light">ABOUT</a></li>
+                           <li><a href="#service" class="nav-link px-2 text-light">SERVICES</a></li>
+                           <li><a href="#" class="nav-link px-2 text-light">PORTFOLIO</a></li>
+                           <li><a href="#" class="nav-link px-2 text-light">TEAM</a></li>
+
+                           <!-- dropdown menu -->
                            <li class="nav-item dropdown">
-                             <a class="nav-link dropdown-toggle text-white" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                             <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                               <li><a class="dropdown-item text-dark" href="#">Dropdown1</a></li>
-                               <!-- nested dropdown -->
-                               <li class="nav-item dropdown">
-                                 <a class="nav-link dropdown-toggle text-dark" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-                                 <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                   <li><a class="dropdown-item text-dark" href="#">Dropdown1</a></li>
-                                   <li><a class="dropdown-item text-dark" href="#">Dropdown2</a></li>
-                                   <li><a class="dropdown-item text-dark" href="#">Dropdown3</a></li>
-                                   <li><a class="dropdown-item text-dark" href="#">Dropdown4</a></li>
-                                 </ul>
-                               </li>
-                               <li><a class="dropdown-item text-dark" href="#">Dropdown2</a></li>
-                               <li><a class="dropdown-item text-dark" href="#">Dropdown3</a></li>
-                               <li><a class="dropdown-item text-dark" href="#">Dropdown4</a></li>
-                             </ul>
-                           </li>
-                           <li><a href="#" class="nav-link px-2 text-light">Contact</a></li>
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">DROPDOWN</a>
+                            <ul class="dropdown-menu dmenu" aria-labelledby="dropdown03">
+                              <li><a class="dropdown-item text-dark" href="#">Dropdown 1</a></li>
+                              <li class="nav-item dropdown">
+                                <a class="dropdown-item dropdown-toggle text-dark" href="#" id="nestedDropdown" data-bs-toggle="dropdown" aria-expanded="false">Deep Dropdown</a>
+                                <ul class="dropdown-menu submenu" aria-labelledby="nestedDropdown">
+                                  <li><a class="dropdown-item text-dark" href="#">Deep Dropdown 1</a></li>
+                                  <li><a class="dropdown-item text-dark" href="#">Deep Dropdown 2</a></li>
+                                  <li><a class="dropdown-item text-dark" href="#">Deep Dropdown 3</a></li>
+                                  <li><a class="dropdown-item text-dark" href="#">Deep Dropdown 4</a></li>
+                                </ul>
+                              </li>
+                              <li><a class="dropdown-item text-dark" href="#">Dropdown 2</a></li>
+                              <li><a class="dropdown-item text-dark" href="#">Dropdown 3</a></li>
+                              <li><a class="dropdown-item text-dark" href="#">Dropdown 4</a></li>
+                            </ul>
+                          </li>
+                           <!-- dropdown ends -->
+                           <li><a href="#" class="nav-link px-2 text-light">CONTACT</a></li>
                          </ul>
                        </div>
                        <div class="mi">
@@ -106,7 +108,7 @@
                 <!-- header ends -->
                 <!-- banner -->
                 <div class="container">
-                  <div class="text text-center py-lg-5 py-md-5 py-sm-3 py-3 my-lg-5 my-md-5 my-sm-4 my-3 text-white">
+                  <div class="text text-center py-lg-5 py-md-5 py-sm-3 py-3 my-lg-5 my-md-5 my-sm-4 my-3 text-white" >
                     <h1>PLAN. LAUNCH. GROW.</h1>
                       <p>We are team of talented designers making websites with Bootstrap</p>
                       <div class="buton">
@@ -130,7 +132,7 @@
     <section id="about">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+          <div class="col-lg-6 col-md-12 col-sm-12 col-12" data-aos="fade-up">
             <h4 class="title fw-bold pt-lg-5 pt-md-5 pt-sm-4 pt-4 pb-lg-3 pb-md-3 pb-sm-2 pb-2">
               Voluptatem dignissimos provident laboris nisi ut aliquip ex ea commodo</h4>
             <div class="img1">
@@ -141,14 +143,14 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-12 col-sm-12 col-12 px-5">
+          <div class="col-lg-6 col-md-12 col-sm-12 col-12 px-5" data-aos="fade-up">
             <p class="ptext pt-lg-5 pt-md-5 pt-sm-4 pt-4 ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <div class="para">
-              <p><span><i class="bi bi-check-circle"></i></span> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <p><span><i class="bi bi-check-circle"></i></span> Duis aute irure dolor in reprehenderit in voluptate velit. </p>
-              <p><span><i class="bi bi-check-circle"></i></span> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+              <p><span><i class="fa-light fa-circle-check bcircle"></i></span> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p><span><i class="fa-light fa-circle-check bcircle"></i></span> Duis aute irure dolor in reprehenderit in voluptate velit. </p>
+              <p><span><i class="fa-light fa-circle-check bcircle"></i></span> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
                 <span class="para3">aute irure dolor in reprehenderit in voluptate trideta</span>
                 <span class="para3">storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></p>
             </div>
@@ -165,7 +167,7 @@
 <!-- about section end -->
 <!-- card section  -->
     <section id="card">
-      <div class="container">
+      <div class="container" data-aos="fade-up">
         <div class="row py-lg-5 py-md-5 py-sm-3 py-3 my-lg-3">
           <!-- card 1 -->
           <div class="col-lg-3 colmd-3 col-sm-6 col-12 mb-3 mb-sm-4">
@@ -223,7 +225,7 @@
 <!-- card section ends -->
 <!-- Service -->
     <section id="service">
-      <div class="container">
+      <div class="container" data-aos="fade-up">
         <div class="row">
           <div class="svtext pt-lg-0 pt-md-5 pt-sm-5 pt-3 mt-md-0 mt-sm-2 mt-2">
             <p class="sub-title d-flex align-items-center">SERVICES</p>
@@ -292,7 +294,7 @@
 <!-- clients -->
     <section id="clients">
       <div class="bg-color mt-lg-5 mt-md-5 mt-sm-3 mt-3">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
           <div class="row">
             <div class="client py-lg-5 py-md-5 py-sm-3 py-3 ">
               <!-- cimg1 -->
@@ -336,7 +338,7 @@
     <div class="container">
       <div class="row">
         <div class="feature">
-          <div class="row py-lg-5 py-md-5 py-sm-3 py-3 my-lg-3">
+          <div class="row py-lg-5 py-md-5 py-sm-3 py-3 my-lg-3" data-aos="fade-up">
             <!-- feature card 1 -->
              <div class="grid">
               <div class="card border-0 rounded-0 shadow ftcrd">
@@ -383,7 +385,7 @@
           </div>
           <!-- row ends -->
           <!-- feature para area-->
-          <div class="feature-area mb-lg-5 mb-md-5 mb-sm-3 mb-3">
+          <div class="feature-area mb-lg-5 mb-md-5 mb-sm-3 mb-3" data-aos="fade-up">
             <div class="row">
               <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-md-2 order-sm-2">
                 <h4 class="title fw-bold pt-lg-5 pt-md-5 pt-sm-4 pt-4 pb-lg-3 pb-md-3 pb-sm-2 pb-2">
@@ -463,8 +465,11 @@
   </section>
 <!-- CHECK OUR SERVICES ends -->
 
+<!-- Script files -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/a68e403577.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script>AOS.init();</script>
   </body>
 </html>
