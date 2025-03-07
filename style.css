@@ -40,7 +40,6 @@
     height: 2px;
     background-color: orangered;
     transition: width 0.3s ease;
-
 }
 
 .nav li:hover::before {
@@ -346,7 +345,7 @@
 
 /* Apply animation when element becomes active */
 .animate-on-scroll {
-    opacity: 1; /* Ensure it starts hidden */
+    opacity: 1;
 }
 
 .animate-on-scroll.active {
@@ -356,7 +355,7 @@
 /* Hover effect */
 .play-button:hover {
     transform: translate(-50%, -50%) scale(1.1); /* Slight scale up on hover */
-    transition: transform 0.3s ease; /* Smooth hover transition */
+    transition: transform 0.3s ease;
 }
 
 /* card */
@@ -380,8 +379,16 @@
     font-size: 40px;
 }
 
+.cardp{
+    padding: 25px 30px 48px 25px !important;
+}
+
 .card-body{
     padding: 25px;
+}
+
+.cdbody{
+    padding: 19px 24px !important;
 }
 
 .card-body h5{
@@ -416,17 +423,13 @@
     margin: 4px 10px;
 }
 
-.icon{
-    background-color: orangered;
-    color: #ffff;
-}
-
 .cardd{
     position: absolute;
     width: 18rem;
     border-radius: 8px;
-    top: 67%;
+    top: 65%;
     left: 45px;
+    transition: top 0.3s ease;
 }
 
 .card-txt h5{
@@ -441,15 +444,9 @@
     color: #565656;
 }
 
-.icn{
-    font-size: 32px;
-    color: #ffff;
-}
-
 .icon{
     width: 72px;
     height: 72px;
-    color: #ffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -459,12 +456,12 @@
     font-size: 28px;
     position: absolute;
     margin: -50px 105px 0px;
+    border: 6px solid white;
 }
 
 .cardd::before{
     box-sizing: border-box;
 }
-
 
 /* cients */
 .bg-color{
@@ -487,6 +484,24 @@
 }
 
 /* features section */
+
+/* hover add img1 */
+.img1-hvr:hover .simg1 img, .img1-hvr:hover .simg2 img, .img1-hvr:hover .simg3 img {
+    transform: scale(1.20);
+    transition: transform 0.3s ease;
+  }
+
+.cardd:hover .icon{
+    border: 2px solid orangered;
+    transition: all 0.3s ease-in-out;
+    color: orangere;
+    background-color: #fff;
+}
+
+.cardd:hover .icn{
+    color: orangered;
+}
+
 .grid{
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -494,8 +509,12 @@
 }
 
 .card-body h4 {
-    font-family: raleway itlaic;
-    font-size: 21px;
+    font-size: 18px;
+    color: #273D4E;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 22px;
 }
 
 .ftcrd{
@@ -505,7 +524,7 @@
 }
 
 .cdb{
-    font-size: 40px;
+    font-size: 45px;
     color: #273D4E;
 }
 
@@ -514,6 +533,11 @@
 }
 
 .cdbi{
+    color: #FF4A17;
+    font-size: 40px;
+}
+
+.cdb1{
     color: #FF4A17;
     font-size: 40px;
 }
