@@ -38,7 +38,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: orangered;
+    background-color: #FF4500;
     transition: width 0.3s ease;
 }
 
@@ -67,6 +67,30 @@
   .nav-link:hover {
     color: #ff4500; /* Orange hover color similar to Dewi theme */
   }
+
+  /* mdnav */
+  .mdnav{
+    background-color: #ffff;
+    color: #444444;
+    font-size: 20px;
+    top: 50px;
+    display: none;
+    border-radius: 10px;
+    margin: 10px 10px 0px 10px;
+}
+
+/* headder color change */
+#main-header {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    z-index: 9999;
+}
+
+/* Scrolled state */
+#main-header.scrolled {
+    background-color: rgba(21, 34, 43, 0.85);
+}
+
 /* Dropdown menu styling */
 
 .dropdown-menu {
@@ -171,7 +195,7 @@
 }
 
 .btn:hover {
-    background-color: orangered;
+    background-color: #FF4500;
 }
 
 .buton{
@@ -204,7 +228,7 @@
 }
 
 .bttn{
-    background-color: orangered;
+    background-color: #FF4500;
     border-radius: 4px;
     padding: 10px 24px;
     border: none;
@@ -245,7 +269,7 @@
 
 .bticon{
     font-size: 30px !important;
-    color: orangered !important;
+    color: #FF4500 !important;
 }
 
 /* about section */
@@ -280,7 +304,7 @@
 }
 
 .bcircle{
-    background-color: orangered;
+    background-color: #FF4500;
     border-radius: 15px;
     color: #ffff;
     font-size: 20px;
@@ -418,7 +442,7 @@
     content: '';
     width: 105px;
     height: 2px;
-    background-color: orangered;
+    background-color: #FF4500;
     display: inline-block;
     margin: 4px 10px;
 }
@@ -451,7 +475,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: orangered;
+    background-color: #FF4500;
     transition: 0.3s ease-in-out;
     font-size: 28px;
     position: absolute;
@@ -492,14 +516,14 @@
   }
 
 .cardd:hover .icon{
-    border: 2px solid orangered;
+    border: 2px solid #FF4500;
     transition: all 0.3s ease-in-out;
     color: orangere;
     background-color: #fff;
 }
 
 .cardd:hover .icn{
-    color: orangered;
+    color: #FF4500;
 }
 
 .grid{
@@ -518,7 +542,7 @@
 }
 
 .ftcrd{
-    background-color: orangered;
+    background-color: #FF4500;
     color: #ffff;
     font-size: 40px;
 }
@@ -556,7 +580,7 @@
 }
 
 .pri{
-    color: orangered;
+    color: #FF4500;
     font-size: 20px;
     cursor: pointer;
 }
@@ -566,28 +590,22 @@
     background-color: #F1F4FA;
 }
 
-.mdnav{
+.srvcecard{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+}
+
+.chkb{
+    font-size: 35px;
+    color: #FF4500;
+}
+
+.chcrd{
     background-color: #ffff;
-    color: #444444;
-    font-size: 20px;
-    top: 50px;
-    display: none;
-    border-radius: 10px;
-    margin: 10px 10px 0px 10px;
+    color: #1c1919;
+    font-size: 40px;
 }
-
-/* headder color change */
-#main-header {
-    background-color: transparent;
-    transition: background-color 0.3s ease;
-    z-index: 9999;
-}
-
-/* Scrolled state */
-#main-header.scrolled {
-    background-color: rgba(21, 34, 43, 0.85);
-}
-
 
 /* media queries 768px*/
 @media screen and (max-width: 768px){
