@@ -607,6 +607,207 @@
     font-size: 40px;
 }
 
+/* slider */
+/* .bg-colr{
+    background-color: #000000b5;
+}
+
+.slider-bg{
+    background-image: url(./images/testimonials-bg.jpg);
+    margin: 0 auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 85vh;
+    padding: 20px;
+    color: #fff;
+    position: relative;
+    text-align: center;
+}
+
+.slider1{
+    padding-top: 70px;
+}
+
+.profile-pic{
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 4px solid #fff;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.slider-card i{
+    color: #ffff00;
+    font-size: 20px;
+}
+
+.slider-card h2{
+    font-size: 20px;
+    color: #ffff;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 24px;
+    margin: 0 0 5px;
+    font-family: "Raleway", sans-serif;
+}
+
+.slider-card p{
+    max-width: 748px;
+    font-size: 14px;
+    color: #A0A4A8;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 27px;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.detail{
+    color: #ffff;
+    font-size: 15px;
+    line-height: 27px;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+}
+.quot{
+    color: #273D4E !important;
+    font-size: 10px;
+} */
+
+/* Existing Google Fonts and Reset remain unchanged */
+/* ... (keeping your existing @import and * selector) ... */
+
+/* Slider */
+  .slider-bg {
+    background-image: url(./images/testimonials-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 85vh;
+    padding: 20px;
+    color: #fff;
+    position: relative;
+    text-align: center;
+  }
+
+  .bg-colr{
+    background-color: #000000a8;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .slider-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .slider-wrapper {
+    display: flex;
+    width: 100%; 
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slider-card {
+    width: 100% ;
+    flex-shrink: 0;
+    padding: 20px;
+  }
+  
+  .profile-pic {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 4px solid #fff;
+  }
+  
+  .profile-pic img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .slider-card h2 {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 24px;
+    margin: 0 0 5px;
+    font-family: "Raleway", sans-serif;
+  }
+  
+  .slider-card p {
+    max-width: 748px;
+    font-size: 14px;
+    color: #A0A4A8;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 27px;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .detail {
+    color: #fff;
+    font-size: 15px;
+    line-height: 27px;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    position: relative;
+    max-width: 748px;
+    margin: 0 auto;
+  }
+  
+  .detail::before {
+    content: '“';
+    font-size: 40px;
+    position: absolute;
+    left: -15px;
+    top: 10px;
+    color: #fff;
+  }
+  
+  .detail::after {
+    content: '”';
+    font-size: 40px;
+    position: absolute;
+    right: 115px;
+    bottom: -14px;
+    color: #fff;
+  }
+  
+  .quot {
+    display: none; 
+  }
+  
+  .rating i {
+    color: #FFFF00;; 
+    font-size: 20px;
+    margin: 0 2px;
+  }
+  
+
+
 /* media queries 768px*/
 @media screen and (max-width: 768px){
     /* the nav */
