@@ -416,17 +416,26 @@
 }
 
 .card-body h5{
-    font-family: raleway itlaic;
-    font-size: 35px;
+    font-size: 36px;
+    color: #273D4E;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 22px;
+    font-family: "Roboto", sans-serif;
 }
 
 .card-body p{
-    font-family: raleway itlaic;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 16px;
+    line-height: 24px;
 }
 
 /* servicess */
 .sub-title {
+    font-size: 14px;
+    margin: 0px;
     font-weight: 600;
     color: #a0a0a0;
     letter-spacing: 1px;
@@ -441,7 +450,7 @@
 .sub-title::after{
     content: '';
     width: 105px;
-    height: 2px;
+    height: 1px;
     background-color: #FF4500;
     display: inline-block;
     margin: 4px 10px;
@@ -508,7 +517,6 @@
 }
 
 /* features section */
-
 /* hover add img1 */
 .img1-hvr:hover .simg1 img, .img1-hvr:hover .simg2 img, .img1-hvr:hover .simg3 img {
     transform: scale(1.20);
@@ -606,86 +614,6 @@
     color: #1c1919;
     font-size: 40px;
 }
-
-/* slider */
-/* .bg-colr{
-    background-color: #000000b5;
-}
-
-.slider-bg{
-    background-image: url(./images/testimonials-bg.jpg);
-    margin: 0 auto;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 85vh;
-    padding: 20px;
-    color: #fff;
-    position: relative;
-    text-align: center;
-}
-
-.slider1{
-    padding-top: 70px;
-}
-
-.profile-pic{
-    cursor: pointer;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 15px;
-    border: 4px solid #fff;
-}
-
-.profile-pic img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.slider-card i{
-    color: #ffff00;
-    font-size: 20px;
-}
-
-.slider-card h2{
-    font-size: 20px;
-    color: #ffff;
-    font-weight: 700;
-    font-style: normal;
-    line-height: 24px;
-    margin: 0 0 5px;
-    font-family: "Raleway", sans-serif;
-}
-
-.slider-card p{
-    max-width: 748px;
-    font-size: 14px;
-    color: #A0A4A8;
-    font-weight: 500;
-    font-style: normal;
-    line-height: 27px;
-    font-family: "Raleway", sans-serif;
-    text-align: center;
-    margin-bottom: 15px;
-}
-.detail{
-    color: #ffff;
-    font-size: 15px;
-    line-height: 27px;
-    font-family: "Raleway", sans-serif;
-    text-align: center;
-}
-.quot{
-    color: #273D4E !important;
-    font-size: 10px;
-} */
-
-/* Existing Google Fonts and Reset remain unchanged */
-/* ... (keeping your existing @import and * selector) ... */
 
 /* Slider */
   .slider-bg {
@@ -805,8 +733,33 @@
     font-size: 20px;
     margin: 0 2px;
   }
-  
 
+  .carousel{
+    left: 70px;
+    top: 43px;
+  }
+
+ /* CHECK OUR PORTFOLIO */
+  .products{
+    padding: 5% 0% 1% 34%;
+    gap: 20px;
+  }
+
+  .products li{
+    list-style: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 18px;
+    color: #444444;
+  }
+
+  .apps{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+  }
 
 /* media queries 768px*/
 @media screen and (max-width: 768px){

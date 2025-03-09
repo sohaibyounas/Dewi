@@ -21,20 +21,15 @@ window.addEventListener('scroll', function() {
 });
 
 
-// // play button animation
-// document.addEventListener("DOMContentLoaded", () => {
-//   const elements = document.querySelectorAll(".animate-on-scroll");
-
-//   const observer = new IntersectionObserver((entries, observer) => {
-//     entries.forEach(entry => {
-//       if (entry.isIntersecting) {
-//         entry.target.classList.add("active");
-//         observer.unobserve(entry.target); // Stop observing after animation
-//       }
-//     });
-//   }, {
-//     threshold: 0.5 // Trigger when 50% of the element is visible
+// // pagination(dots)
+//   const swiper = new Swiper('.mySwiper', {
+//     loop: true,
+//     autoplay: {
+//       delay: 5000, // 5 seconds
+//       disableOnInteraction: false,
+//     },
+//     pagination: {
+//       el: '.swiper-pagination',
+//       clickable: true,
+//     },
 //   });
-
-//   elements.forEach(element => observer.observe(element));
-// });
