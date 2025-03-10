@@ -746,13 +746,17 @@
     padding: 50px 0px 10px 70px;
   }
 
-  .nav-tabs .nav-link.active {
+  .nav-pills .nav-link.active {
     color: #FF4A17;
     background-color: #fff;
-    border: none;
 }
 
-.nav-tabs .nav-link {
+.nav-pills .nav-link:hover {
+    color: #FF4A17;
+    background-color: #fff;
+}
+
+.nav-pills .nav-link {
     color: #444444;
     background-color: #fff;
     border: none;
@@ -761,10 +765,6 @@
     font-weight: 500;
     font-style: normal;
     line-height: 18px;
-}
-
-.nav-tabs .nav-link:hover {
-    color: #FF4A17;
 }
 
 .tabgrid img{
@@ -781,6 +781,12 @@
 .app1{
     position: relative;
     overflow: hidden;
+}
+
+.dapps{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
 }
 
 /* portfolio image card */
@@ -837,6 +843,17 @@
     font-size: 30px;
 }
 
+/* check our team */
+.team-bg{
+    background-color: #F1F4FA;
+}
+
+.team-card{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    padding-top: 55px;
+}
 
 
 
