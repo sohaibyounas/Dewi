@@ -57,7 +57,6 @@
     padding: 10px 0px 0px 12px;
 }
 
-/* ai code */
 .nav-link {
     font-family: "raleway italic", sans-serif;
     font-size: 16px;
@@ -65,10 +64,9 @@
   }
   
   .nav-link:hover {
-    color: #ff4500; /* Orange hover color similar to Dewi theme */
+    color: #ff4500;
   }
 
-  /* mdnav */
   .mdnav{
     background-color: #ffff;
     color: #444444;
@@ -516,8 +514,7 @@
     transition: all 0.3s ease-in-out;
 }
 
-/* features section */
-/* hover add img1 */
+/* features section hover */
 .img1-hvr:hover .simg1 img, .img1-hvr:hover .simg2 img, .img1-hvr:hover .simg3 img {
     transform: scale(1.20);
     transition: transform 0.3s ease;
@@ -740,26 +737,108 @@
   }
 
  /* CHECK OUR PORTFOLIO */
-  .products{
-    padding: 5% 0% 1% 34%;
-    gap: 20px;
+  .tabs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    list-style: none;
+    padding: 50px 0px 10px 70px;
   }
 
-  .products li{
-    list-style: none;
+  .nav-tabs .nav-link.active {
+    color: #FF4A17;
+    background-color: #fff;
+    border: none;
+}
+
+.nav-tabs .nav-link {
+    color: #444444;
+    background-color: #fff;
+    border: none;
     font-family: "Roboto", sans-serif;
+    font-size: 18px;
     font-weight: 500;
     font-style: normal;
-    font-size: 18px;
     line-height: 18px;
-    color: #444444;
-  }
+}
 
-  .apps{
+.nav-tabs .nav-link:hover {
+    color: #FF4A17;
+}
+
+.tabgrid img{
+    width: 100%;
+    height: auto;
+} 
+
+.tabgrid{
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 20px;
-  }
+}
+
+.app1{
+    position: relative;
+    overflow: hidden;
+}
+
+/* portfolio image card */
+.app1 .cards {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.525);
+    display: none;
+}
+
+.app1:hover img {
+    transform: scale(1.20);
+    transition: transform 0.3s ease;
+}
+
+.app1:hover .cards{
+    display: block;
+}
+.pfbtn{
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    margin: 35px 30px 30px 45px;
+    padding: 5px;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Raleway", sans-serif;
+}
+
+.cardtext{
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 24px;
+    padding: 45px 0px 0px 45px;
+    color: #fff;
+}
+
+.zoomlink{
+    padding: 35px 0px 0px 140px;
+}
+
+.zoomin{
+    font-size: 25px;
+}
+
+.link{
+    font-size: 30px;
+}
+
+
+
 
 /* media queries 768px*/
 @media screen and (max-width: 768px){
