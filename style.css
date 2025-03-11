@@ -849,13 +849,98 @@
 }
 
 .team-card{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding-top: 55px;
 }
 
+/* gpt code */
+.team-1 {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
+}
 
+.team-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.team-card {
+    position: absolute;
+    bottom: -63px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    padding: 8px 0px;
+}
+
+.tcard-body {
+    padding: 15px;
+}
+
+.team-name {
+    color: #273D4E;
+    font-size: 16px;
+    margin-bottom: 5px;
+    position: relative;
+    display: inline-block;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 19px;
+}
+
+.team-name::after {
+    content: "";
+    display: block;
+    width: 40px; /* Adjust width as needed */
+    height: 2px;
+    background: gray;
+    margin: 5px 0px;
+}
+
+.text-body-secondary {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.dlink{
+    margin: 25px 0px 0px 25px;
+}
+
+.dlink a {
+    margin: 0 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.dlink a i{
+    transition: color 0.3s ease-in-out;
+}
+
+.team-member{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-top: 60px;
+}
+
+.ticon{
+    color: #C6C6C6;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.ticon:hover{
+    color: #ff4500;
+}
 
 /* media queries 768px*/
 @media screen and (max-width: 768px){

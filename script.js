@@ -19,17 +19,3 @@ window.addEventListener('scroll', function() {
     header.classList.remove('scrolled');
   }
 });
-
-
-// // pagination(dots)
-//   const swiper = new Swiper('.mySwiper', {
-//     loop: true,
-//     autoplay: {
-//       delay: 5000, // 5 seconds
-//       disableOnInteraction: false,
-//     },
-//     pagination: {
-//       el: '.swiper-pagination',
-//       clickable: true,
-//     },
-//   });
