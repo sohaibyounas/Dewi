@@ -808,6 +808,7 @@
 .app1:hover .cards{
     display: block;
 }
+
 .pfbtn{
     background-color: #ff4500;
     color: #fff;
@@ -846,6 +847,7 @@
 /* check our team */
 .team-bg{
     background-color: #F1F4FA;
+    padding-bottom: 120px;
 }
 
 .team-card{
@@ -855,7 +857,10 @@
     padding-top: 55px;
 }
 
-/* gpt code */
+#Team{
+    padding-top: 60px;
+}
+
 .team-1 {
     position: relative;
     display: inline-block;
@@ -941,6 +946,116 @@
 .ticon:hover{
     color: #ff4500;
 }
+
+
+/* Contact */
+.form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.adicon{
+    color: #ff4500;
+    font-size: 25px;
+    cursor: pointer;
+    padding: 10px 15px;
+    width: 60px; 
+    height: 60px;
+    border: 2px dotted #FF9274;
+    border-radius: 50%;
+}
+
+
+.adress{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+}
+
+.adress h5{
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #696969;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.adress p{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 21px;
+    color: #444444;
+    text-align: center;
+}
+
+/* subadress */
+.subadress{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    padding-top: 30px;
+}
+
+/* form */
+.form{
+    padding: 15px;
+}
+
+.contact-form{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-control{
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0px;
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 21px;
+    color: #CFC6C6;
+}
+
+
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+col {
+    flex: 1;
+}
+
+.btn-send {
+    display: block;
+    width: 30%;
+    padding: 12px;
+    background-color: #FF4A17;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    margin: 20px 0px 0px 35px;
+}
+
+.btn-send:hover {
+    background-color: #FF4A17;
+}
+
 
 /* media queries 768px*/
 @media screen and (max-width: 768px){
