@@ -175,7 +175,7 @@
 
 /* clr */
 .clr{
-    background: #00000096;
+    background: #000000ba;
     position: absolute;
     top: 0;
     left: 0;
@@ -464,9 +464,11 @@
 }
 
 .card-txt h5{
-    font-family: raleway itlaic;
     font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
     color: #273D4E;
+    font-family: "Roboto", sans-serif;
 }
 
 .card-txt p{
@@ -523,7 +525,6 @@
 .cardd:hover .icon{
     border: 2px solid #FF4500;
     transition: all 0.3s ease-in-out;
-    color: orangere;
     background-color: #fff;
 }
 
@@ -862,7 +863,6 @@
 }
 
 .team-1 {
-    position: relative;
     display: inline-block;
     width: 100%;
     max-width: 400px;
@@ -1271,16 +1271,16 @@
 }
 
 /* media queries 768px*/
-@media screen and (max-width: 768px)
+@media screen and (max-width: 769px)
 {
-    /* the nav */
+/* the nav */
     .test{
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    /* md navbar */
+/* md navbar */
     .mi a{
         display: flex;
         align-items: center;
@@ -1304,9 +1304,30 @@
         padding: 10px 15px;
     }
 
-    /* card */
-    .cardp{
-        padding: 30px 25px 40px 25px;
+/* banner */
+    .text h1 {
+        font-size: 40px;
+        line-height: 58px;
+    }
+
+    .text p {
+        font-style: normal;
+        font-size: 20px;
+        line-height: 36px;
+    }
+
+/* service */
+    .cardd {
+        left: 18px;
+    }
+
+    .card-txt h5{
+        font-size: 16px;
+    }
+
+/* card */
+    .card-body h5{
+        font-size: 20px;
     }
 
     .simg3{
@@ -1314,14 +1335,50 @@
     }
 
     .card-body {
-        padding: 30px 55px;
+        padding: 36px 22px;
     }
 
-    /* Clients */
+    .images{
+        margin: auto;
+
+    }
+
+/* Clients */
     .client{
         grid-template-columns: auto auto auto;
         justify-content: space-between;
         gap: 40px;
     }
+
+/* feature */
+.cdbody {
+    padding: 0px 45px !important;
+}
+
+.main-title {
+    font-size: 24px;
+}
+
+/* portfolio */
+.tabgrid, .dapps, .team-member{
+    grid-template-columns: auto auto;
+}
+
+/* contact form */
+.form {
+    grid-template-columns: 1fr;
+}
+
+.btn-send{
+    margin: 20px auto;
+}
+
+/* footer */
+.input-field button {
+    padding: 8px 24px;
+}
+.our-text {
+    padding-top: 0px;
+}
 
 }
