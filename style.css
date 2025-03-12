@@ -381,9 +381,16 @@
 }
 
 /* card */
+.cadrs{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+}
+
 .client{
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
+    gap: 40px;
 }
 
 #card{
@@ -651,7 +658,6 @@
   
   .slider-card {
     width: 100% ;
-    flex-shrink: 0;
     padding: 20px;
   }
   
@@ -1271,16 +1277,18 @@
 }
 
 /* media queries 768px*/
-@media screen and (max-width: 769px)
-{
-/* the nav */
+@media screen and (max-width: 769px){
+/* nav */
+    .nav li a {
+        color: #444444;
+    }
+
     .test{
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-/* md navbar */
     .mi a{
         display: flex;
         align-items: center;
@@ -1316,18 +1324,13 @@
         line-height: 36px;
     }
 
-/* service */
-    .cardd {
-        left: 18px;
-    }
-
-    .card-txt h5{
-        font-size: 16px;
-    }
-
 /* card */
+    .cadrs{
+        grid-template-columns: auto auto;
+    }
+
     .card-body h5{
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .simg3{
@@ -1340,45 +1343,159 @@
 
     .images{
         margin: auto;
+    }
 
+/* service */
+    .cardd {
+        left: 18px;
+    }
+
+    .card-txt h5{
+        font-size: 16px;
     }
 
 /* Clients */
     .client{
         grid-template-columns: auto auto auto;
-        justify-content: space-between;
-        gap: 40px;
     }
 
 /* feature */
-.cdbody {
-    padding: 0px 45px !important;
-}
+    .cdbody {
+        padding: 0px 45px !important;
+    }
 
-.main-title {
-    font-size: 24px;
-}
+    .main-title {
+        font-size: 24px;
+    }
 
 /* portfolio */
-.tabgrid, .dapps, .team-member{
-    grid-template-columns: auto auto;
-}
+    .tabgrid, .dapps, .team-member{
+        grid-template-columns: auto auto;
+    }
 
-/* contact form */
-.form {
-    grid-template-columns: 1fr;
-}
+    /* contact form */
+    .form {
+        grid-template-columns: 1fr;
+    }
 
-.btn-send{
-    margin: 20px auto;
-}
+    .btn-send{
+        margin: 20px auto;
+    }
 
 /* footer */
-.input-field button {
-    padding: 8px 24px;
-}
-.our-text {
-    padding-top: 0px;
+    .input-field button {
+        padding: 8px 24px;
+    }
+    .our-text {
+        padding-top: 0px;
+    }
 }
 
+/* media queries 577px*/
+@media screen and (max-width: 577px){
+/* card */
+    .card-body h5 {
+        font-size: 30px;
+    }
+
+/* services */
+    .cardd {
+        width: 26rem;
+        left: 40px;
+    }
+
+    .icon {
+        margin: -50px 150px 0px;
+    }
+
+    .cadrs{
+        grid-template-columns: auto;
+    }
+
+/* clients */
+    .client{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cimg1 {
+        width: 180px;
+    }
+
+    .cdbody {
+        padding: 0px 35px !important;
+    }
+
+    .title {
+        font-size: 26px;
+    }
+
+/* check services */
+    .srvcecard {
+        grid-template-columns: auto;
+    }
+
+/* portfolio */
+    .tabgrid, .dapps{
+        grid-template-columns: auto;
+    }
+
+    .team-member {
+        grid-template-columns: auto;
+
+    }
+
+/* contact form */
+    .subadress {
+        grid-template-columns: auto;
+    }
+
+    .fotrbtm{
+        padding-top: 40px;
+    }
+}
+
+/* media queries 426px*/
+@media screen and (max-width: 426px){
+/* services */
+    .cardd {
+        width: 22rem;
+        left: 12px;
+    }
+/* carsuole */
+    .carousel {
+        left: 0px;
+        top: 60px;
+    }
+/* portfolio */
+    .tabs {
+        gap: 10px;
+        padding: 50px 0px 10px 20px;
+    }
+
+    .nav-pills .nav-link.active {
+        font-size: 14px;
+        margin: 0 5px;
+    }
+
+    .nav-pills .nav-link {
+        font-size: 14px;
+        margin: 0 5px;
+    }
+
+/* footer */
+    .main {
+        padding: 50px 20px 0px 0px;
+    }
+
+    .useful-links {
+        padding-top: 20px;
+    }
+
+    .our-text {
+        padding-top: 20px;
+    }
+
+    .fotrbtm{
+        padding-top: 40px;
+    }
 }
