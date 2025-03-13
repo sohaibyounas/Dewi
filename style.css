@@ -908,8 +908,8 @@
 .team-name::after {
     content: "";
     display: block;
-    width: 40px; /* Adjust width as needed */
-    height: 2px;
+    width: 40px;
+    height: 1px;
     background: gray;
     margin: 5px 0px;
 }
@@ -1412,6 +1412,10 @@
         grid-template-columns: auto;
     }
 
+    .simg3 {
+        padding-top: 0px;
+    }
+
 /* clients */
     .client{
         grid-template-columns: 1fr 1fr;
@@ -1456,11 +1460,31 @@
 
 /* media queries 426px*/
 @media screen and (max-width: 426px){
+/* banner */
+    .text h1 {
+        font-size: 34px;
+        line-height: 40px;
+    }
+
+    .text p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
 /* services */
     .cardd {
         width: 22rem;
         left: 12px;
     }
+
+    .servimg{
+        padding-top: 100px;
+    }
+
+    .svimage{
+        padding: 55px 0px 45px 0px;
+    }
+
 /* carsuole */
     .carousel {
         left: 0px;
@@ -1497,5 +1521,60 @@
 
     .fotrbtm{
         padding-top: 40px;
+    }
+}
+
+/* media queries 376px*/
+@media screen and (max-width: 376px){
+/* service */
+    .cardd {
+        width: 19rem;
+        left: 12px;
+    }
+
+    .servimg{
+        padding-top: 140px;
+    }
+
+    .svimage{
+        padding: 95px 0px 45px 0px;
+    }
+
+/* cklients */
+    .cimg1 {
+        width: 130px;
+    }
+
+/* feature */
+    .cdbody {
+        padding: 0px 20px !important;
+    }
+    
+    .cdb {
+        font-size: 24px;
+    }
+
+    .cdb1 {
+        font-size: 33px;
+        padding: 6px 0px;
+    }
+
+}
+
+/* media queries 320px*/
+@media screen and (max-width: 320px){
+/* service */
+    .servimg{
+        padding-top: 100px;
+    }
+
+    .svimage{
+        padding: 30px 0px 40px 0px;
+    }
+
+/* service */
+    .cardd {
+        width: 16rem;
+        left: 9px;
     }
 }
