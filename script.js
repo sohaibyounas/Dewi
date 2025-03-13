@@ -1,4 +1,4 @@
-// icon click sm nav show/hide
+// icon click small navbar toggle
 function headernav() {
   let nav = document.getElementById("smnav");
   if (nav.style.display === "block") {
@@ -19,3 +19,12 @@ window.addEventListener('scroll', function() {
     header.classList.remove('scrolled');
   }
 });
+
+
+// icon toggle 
+document.getElementById('toggle-icon').addEventListener('click', function() {
+  this.classList.toggle('bi-list');
+  this.classList.toggle('bi-x');
+  // this.style.color = this.classList.contains('bi-list') ? '#fff' : '#ff4500'; //for icon color changes
+});
+

@@ -36,14 +36,16 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0;
+    width: 0px;
     height: 2px;
     background-color: #FF4500;
     transition: width 0.3s ease;
 }
 
 .nav li:hover::before {
+    left: 10px;
     width: 100%;
+    margin: 0;
     transition: width 0.3s ease;
 }
 
@@ -72,10 +74,15 @@
     color: #444444;
     font-size: 20px;
     top: 50px;
-    display: none;
     border-radius: 10px;
-    margin: 10px 10px 0px 10px;
+    margin: 20px 28px 0px 35px;
 }
+
+.mdnav ul li a{
+    color: #444444;
+}
+
+
 
 /* headder color change */
 #main-header {
@@ -1300,6 +1307,8 @@
     .blist{
         color: #ffff;
         font-size: 30px;
+        cursor: pointer;
+        transition: 0.3s;
     }
 
     .nav{
