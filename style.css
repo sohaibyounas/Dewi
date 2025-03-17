@@ -1342,6 +1342,33 @@
     text-decoration: none;
 }
 
+/* arrow */
+#scrollBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    background-color: #FF5722; /* Orange color */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px;
+    transition: 0.3s ease-in-out;
+}
+
+#scrollBtn i {
+    font-size: 20px;
+}
+
+#scrollBtn:hover {
+    background-color: #E64A19; /* Darker orange */
+}
+
 /* media queries 768px*/
 @media screen and (max-width: 769px){
 /* nav */

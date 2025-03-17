@@ -77,3 +77,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setInterval(autoSlide, 3000); // Change slide every 3 seconds
 });
+
+
+// scroll up/down arrow
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollBtn = document.getElementById("scrollBtn");
+  const arrowIcon = scrollBtn.querySelector("i");
+
+  window.addEventListener("scroll", function () {
+      let scrollHeight = document.documentElement.scrollHeight;
+      let scrollTop = window.scrollY;
+      let clientHeight = document.documentElement.clientHeight;
+      let scrollPosition = scrollTop + clientHeight;
+
+      if (scrollTop > 50) {
+          scrollBtn.style.display = "flex"; // Show button
+      } else {
+          scrollBtn.style.display = "none"; // Hide button
+      }
+
+      // Change arrow direction
+      if (scrollPosition >= scrollHeight - 50) {
+          arrowIcon.classList.replace("bi-arrow-down", "bi-arrow-up"); // Change to Up arrow
+      } else {
+          arrowIcon.classList.replace("bi-arrow-up", "bi-arrow-down"); // Change to Down arrow
+      }
+  });
+
+  scrollBtn.addEventListener("click", function () {
+      if (arrowIcon.classList.contains("bi-arrow-up")) {
+          window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top
+      } else {
+          window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" }); // Scroll to bottom
+      }
+  });
+});
+
+
