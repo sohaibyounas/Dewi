@@ -699,50 +699,45 @@
   }
   
   .slider-card p {
-    max-width: 748px;
-    font-size: 14px;
-    color: #A0A4A8;
-    font-weight: 500;
-    font-style: normal;
-    line-height: 27px;
-    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    color: #F5F6F6;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 24px;
+    font-family: "Roboto", sans-serif;
     text-align: center;
     margin-bottom: 15px;
   }
-  
-  .detail {
-    color: #fff;
-    font-size: 15px;
-    line-height: 27px;
-    font-family: "Raleway", sans-serif;
-    text-align: center;
-    position: relative;
-    max-width: 748px;
-    margin: 0 auto;
-  }
-  
-  .detail::before {
-    content: '“';
-    font-size: 40px;
-    position: absolute;
-    left: -15px;
-    top: 10px;
-    color: #fff;
-  }
-  
-  .detail::after {
-    content: '”';
-    font-size: 40px;
-    position: absolute;
-    right: 115px;
-    bottom: -14px;
-    color: #fff;
-  }
-  
+
+/* quote */ 
   .quot {
-    display: none; 
+    font-size: 25px;
+    left: -5px;
+    top: 0px;
+    color: #A1A7AC;
+    display: inline-block;
+    position: relative;
   }
-  
+
+  .quots {
+    font-size: 25px;
+    left: -1px;
+    top: 0px;
+    color: #A1A7AC;
+    display: inline-block;
+    position: relative;
+  }
+
+  .quote {
+    font-size: 25px;
+    color: #A1A7AC;
+    display: inline-block;
+    position: relative;
+    right: -5px;
+    top: 10px;
+  }
+
+/* rating  */
   .rating i {
     color: #FFFF00;; 
     font-size: 20px;
@@ -752,7 +747,7 @@
 /* Bootstrap Carousel Adjustments */
   .carousel{
     position: relative;
-    left: 70px;
+    left: 82px;
     top: 43px;
   }
 
@@ -764,7 +759,7 @@
 .carousel-control-next-icon {
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 50%;
-} */
+} 
 
 .carousel-indicators button {
     background-color: rgba(255, 255, 255, 0.6);
@@ -776,8 +771,8 @@
 
 .carousel-indicators {
     position: absolute; 
-    right: 0;
-    bottom: -35px;
+    right: 170px;
+    bottom: -60px;
     left: 0;
     z-index: 2;
     display: flex;
@@ -810,6 +805,10 @@
 
 .carousel-indicators [data-bs-target].active {
     opacity: 1;
+}
+
+.carousel-inner{
+    padding: 50px 160px 0px 0px;
 }
 
  /* CHECK OUR PORTFOLIO */

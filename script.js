@@ -65,3 +65,15 @@ document.addEventListener('DOMContentLoaded', function () {
   handleScroll();
 });
 
+
+// slider auto-play
+document.addEventListener("DOMContentLoaded", () => {
+  const autoSlide = () => {
+    let activeSlide = document.querySelector(".carousel-item.active");
+    let nextSlide = activeSlide.nextElementSibling || activeSlide.parentElement.firstElementChild;
+    activeSlide.classList.remove("active");
+    nextSlide.classList.add("active");
+  };
+
+  setInterval(autoSlide, 3000); // Change slide every 3 seconds
+});
