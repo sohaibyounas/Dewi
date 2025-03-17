@@ -67,16 +67,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // slider auto-play
-document.addEventListener("DOMContentLoaded", () => {
-  const autoSlide = () => {
-    let activeSlide = document.querySelector(".carousel-item.active");
-    let nextSlide = activeSlide.nextElementSibling || activeSlide.parentElement.firstElementChild;
-    activeSlide.classList.remove("active");
-    nextSlide.classList.add("active");
-  };
+// document.addEventListener("DOMContentLoaded", () => {
+//   const autoSlide = () => {
+//     let activeSlide = document.querySelector(".carousel-item.active");
+//     let nextSlide = activeSlide.nextElementSibling || activeSlide.parentElement.firstElementChild;
+//     activeSlide.classList.remove("active");
+//     nextSlide.classList.add("active");
+//   };
 
-  setInterval(autoSlide, 3000); // Change slide every 3 seconds
+//   setInterval(autoSlide, 3000); // Change slide every 3 seconds
+// });
+
+let myCarousel = new bootstrap.Carousel(document.querySelector('#carouselExampleIndicators'), {
+  interval: 3000,
+  ride: 'carousel'
 });
+
+// Mouse Drag Support
+const carousel = document.querySelector('.carousel');
+let isDown = false, startX, scrollLeft;
+
+carousel.addEventListener('mousedown', (e) => {
+  isDown = true;
+  startX = e.pageX - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
+});
+
+carousel.addEventListener('mouseleave', () => isDown = false);
+carousel.addEventListener('mouseup', () => isDown = false);
+
+carousel.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - carousel.offsetLeft;
+  const walk = (x - startX) * 3;
+  carousel.scrollLeft = scrollLeft - walk;
+});
+
 
 
 // scroll up/down arrow
@@ -98,19 +125,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Change arrow direction
       if (scrollPosition >= scrollHeight - 50) {
-          arrowIcon.classList.replace("bi-arrow-down", "bi-arrow-up"); // Change to Up arrow
+          arrowIcon.classList.replace("bi-arrow-down", "bi-arrow-up");
       } else {
-          arrowIcon.classList.replace("bi-arrow-up", "bi-arrow-down"); // Change to Down arrow
+          arrowIcon.classList.replace("bi-arrow-up", "bi-arrow-down");
       }
   });
 
   scrollBtn.addEventListener("click", function () {
       if (arrowIcon.classList.contains("bi-arrow-up")) {
-          window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top
+          window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
-          window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" }); // Scroll to bottom
+          window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
       }
   });
 });
 
 
+// dropdown toggle
+document.querySelectorAll('.dropdown-toggle').forEach(item => {
+  item.addEventListener('click', function (event) {
+      let submenu = this.nextElementSibling;
+      submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+      event.stopPropagation();
+  });
+});
