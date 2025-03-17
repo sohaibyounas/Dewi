@@ -388,8 +388,18 @@
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-.play-button:hover i{
+@keyframes scaleBack {
+  0% {
     font-size: 100px;
+  }
+  100% {
+    font-size: 24px; 
+  }
+}
+
+.play-button:hover i {
+  font-size: 100px;
+  animation: scaleBack 2s forwards;
 }
 
 /* card */
@@ -403,6 +413,7 @@
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
     gap: 40px;
+    padding-left: 50px;
 }
 
 #card{
@@ -478,7 +489,7 @@
     width: 18rem;
     border-radius: 8px;
     top: 65%;
-    left: 45px;
+    left: 30px;
     transition: top 0.3s ease;
 }
 
@@ -657,20 +668,8 @@
   
   .slider-container {
     position: relative;
-    overflow: hidden;
     max-width: 900px;
     margin: 0 auto;
-  }
-  
-  .slider-wrapper {
-    display: flex;
-    width: 100%; 
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .slider-card {
-    width: 100% ;
-    padding: 20px;
   }
   
   .profile-pic {
@@ -695,7 +694,7 @@
     font-weight: 700;
     font-style: normal;
     line-height: 24px;
-    margin: 0 0 5px;
+    margin: 5px;
     font-family: "Raleway", sans-serif;
   }
   
@@ -750,10 +749,68 @@
     margin: 0 2px;
   }
 
+/* Bootstrap Carousel Adjustments */
   .carousel{
+    position: relative;
     left: 70px;
     top: 43px;
   }
+
+  .carousel-control-prev, .carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+} */
+
+.carousel-indicators button {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.carousel-indicators .active {
+    background-color: white;
+}
+
+.carousel-indicators {
+    position: absolute; 
+    right: 0;
+    bottom: -35px;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-bottom: 1rem;
+    margin-left: 15%;
+}
+
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+    border-radius: 50%;
+}
+
+.carousel-indicators [data-bs-target].active {
+    opacity: 1;
+}
 
  /* CHECK OUR PORTFOLIO */
   .tabs{
@@ -1618,4 +1675,12 @@
         width: 16rem;
         left: 9px;
     }
+}
+
+#smnav {
+  display: none;
+}
+
+#smnav.show {
+  display: block;
 }
