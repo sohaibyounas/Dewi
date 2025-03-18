@@ -27,46 +27,21 @@
 }
 
 /* navbar underline effect*/
-.nav{
+.nav {
     gap: 17px;
 }
 
-.nav li{
+.nav li {
     position: relative;
 }
 
-.nav li a:hover::after {
-    /* position: absolute; */
-    bottom: -2px;
-    left: 10%;
-    width: 0;
-
-    content: '';
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: #FF4500;
-    margin-top: 5px;
-    transition: width 0.3s ease, left 0.3s ease;
-}
-
-.nav li a{
+.nav li a {
     font-family: "Inter", sans-serif;
     font-weight: 500;
     font-style: normal;
     font-size: 13px;
     line-height: 15px;
     transition: color .3s ease;
-}
-
-.nav li a:hover::before,
-.nav li a.active::before {
-    width: 100%;
-    left: 0;
-}
-
-.nav li a.active {
-    color: #FF4500;
 }
 
 .nav li a::before {
@@ -82,7 +57,11 @@
 
 .nav li a:hover::before,
 .nav li a.active::before {
-    width: 100%; 
+    width: 100%;
+}
+
+.nav li a.active {
+    color: #FF4500;
 }
 
 .test{
@@ -112,6 +91,14 @@
 
 .mdnav ul li a{
     color: #444444;
+}
+
+.mdnav .nav li a::before {
+    display: none;
+}
+
+.mdnav .nav li a:hover {
+    color: #FF4500;
 }
 
 /* Scrolled state */
@@ -1405,7 +1392,6 @@
     flex-direction: column;
     align-items: start;
     justify-content: start;
-    /* padding: 10px 15px; */
 }
 
 .nav li a {
