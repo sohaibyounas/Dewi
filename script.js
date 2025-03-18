@@ -123,3 +123,59 @@ document.addEventListener("DOMContentLoaded", function () {
 //       event.stopPropagation();
 //   });
 // });
+
+
+// Ensure navbar is closed on page load
+document.addEventListener('DOMContentLoaded', function () {
+  let nav = document.getElementById('smnav');
+  nav.style.display = 'none'; // Force initial state to closed
+});
+
+// Icon click to show/hide small nav
+function headernav() {
+  let nav = document.getElementById('smnav');
+  if (nav.style.display === 'none' || nav.style.display === '') {
+    nav.style.display = 'block';
+  } else {
+    nav.style.display = 'none';
+  }
+  console.log('Navbar display: ' + nav.style.display);
+}
+
+// Prevent navbar from closing when clicking inside it
+let nav = document.getElementById('smnav');
+nav.addEventListener('click', function (event) {
+  event.stopPropagation(); // Prevents click inside nav from bubbling up
+});
+
+// Close navbar if clicking outside, but not on the icon
+document.addEventListener('click', function (event) {
+  let nav = document.getElementById('smnav');
+  let toggleIcon = document.querySelector('.blist');
+  if (!nav.contains(event.target) && event.target !== toggleIcon) {
+    nav.style.display = 'none';
+  }
+});
+
+// Navbar color changes on scroll
+window.addEventListener('scroll', function () {
+  let header = document.getElementById('main-header');
+  if (window.scrollY > 60) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+// Pagination (dots) - Keep your existing Swiper code
+const swiper = new Swiper('.mySwiper', {
+  loop: true,
+  autoplay: {
+    delay: 5000, // 5 seconds
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});

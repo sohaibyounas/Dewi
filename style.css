@@ -1783,11 +1783,11 @@
 /* small nav */
     #smnav {
         display: none;
-        }
+    }
     
-        #smnav.show {
+    #smnav.show {
         display: block;
-        }
+    }
 
 /* banner */
     .text h1 {
