@@ -13,7 +13,7 @@ function headernav() {
 // navbar color changes on scroll
 window.addEventListener('scroll', function() {
   let header = document.getElementById('main-header');
-  if (window.scrollY > 60) {
+  if (window.scrollY > 50) {
     header.classList.add('scrolled');
   } else {
     header.classList.remove('scrolled');
@@ -67,41 +67,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // slider auto-play
-// document.addEventListener("DOMContentLoaded", () => {
-//   const autoSlide = () => {
-//     let activeSlide = document.querySelector(".carousel-item.active");
-//     let nextSlide = activeSlide.nextElementSibling || activeSlide.parentElement.firstElementChild;
-//     activeSlide.classList.remove("active");
-//     nextSlide.classList.add("active");
-//   };
+document.addEventListener("DOMContentLoaded", () => {
+  const autoSlide = () => {
+    let activeSlide = document.querySelector(".carousel-item.active");
+    let nextSlide = activeSlide.nextElementSibling || activeSlide.parentElement.firstElementChild;
+    activeSlide.classList.remove("active");
+    nextSlide.classList.add("active");
+  };
 
-//   setInterval(autoSlide, 3000); // Change slide every 3 seconds
-// });
-
-let myCarousel = new bootstrap.Carousel(document.querySelector('#carouselExampleIndicators'), {
-  interval: 3000,
-  ride: 'carousel'
-});
-
-// Mouse Drag Support
-const carousel = document.querySelector('.carousel');
-let isDown = false, startX, scrollLeft;
-
-carousel.addEventListener('mousedown', (e) => {
-  isDown = true;
-  startX = e.pageX - carousel.offsetLeft;
-  scrollLeft = carousel.scrollLeft;
-});
-
-carousel.addEventListener('mouseleave', () => isDown = false);
-carousel.addEventListener('mouseup', () => isDown = false);
-
-carousel.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - carousel.offsetLeft;
-  const walk = (x - startX) * 3;
-  carousel.scrollLeft = scrollLeft - walk;
+  setInterval(autoSlide, 3000); // Change slide every 3 seconds
 });
 
 
@@ -142,10 +116,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // dropdown toggle
-document.querySelectorAll('.dropdown-toggle').forEach(item => {
-  item.addEventListener('click', function (event) {
-      let submenu = this.nextElementSibling;
-      submenu.style.display = submenu.style.display === "block" ? "none" : "block";
-      event.stopPropagation();
-  });
-});
+// document.querySelectorAll('.dropdown-toggle').forEach(item => {
+//   item.addEventListener('click', function (event) {
+//       let submenu = this.nextElementSibling;
+//       submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+//       event.stopPropagation();
+//   });
+// });
