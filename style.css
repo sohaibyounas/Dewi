@@ -1876,10 +1876,7 @@
     }
 
     .team-card {
-        position: absolute;
-        bottom: -63px;
         left: 50%;
-        transform: translateX(-50%);
         width: 90%;
         padding: 0px;
     }
@@ -1891,4 +1888,106 @@
     .dlink {
         margin: 25px 0px;
     }
+}
+
+@media screen and (max-width: 251px){
+/* banner */
+    .btn {
+        border-radius: 4px;
+        padding: 2px 5px;
+    }
+    .text h1 {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .text p {
+        line-height: 24px;
+    }
+
+    .bttn {
+        padding: 0px 17px;
+    }
+
+
+/* service */
+    .icon {
+        margin: -50px 53px 0px;
+    }
+
+    .cardp {
+        padding: 20px 0px 0px 10px !important;
+    }
+
+    .cardd {
+        width: 11rem;
+        left: 9px;
+    }
+
+    .card-txt h5 {
+        line-height: 18px;
+    }
+
+    .servimg {
+        padding-top: 120px;
+    }
+
+    .svimage {
+        padding: 180px 0px 140px 0px;
+    }
+
+    .cimg1 img {
+        width: 85px;
+    }
+
+    .client {
+        padding-left: 5px;
+        gap: 10px;
+    }
+
+    .cimg1 {
+        width: 117px;
+    }
+
+    .grid {
+        grid-template-columns: auto auto;
+        gap: 10px;
+    }
+
+    .carousel-inner {
+        padding: 0px;
+    }
+
+    .tabs {
+        gap: 0px;
+        padding: 50px 0px 10px 5px;
+    }
+
+    .pfbtn {
+        margin: 15px 0px 0px 15px;
+        line-height: 14px;
+    }
+
+    .zoomlink {
+        padding: 10px 0px 20px 85px;
+    }
+
+    .tcard-body {
+        padding: 10px;
+    }
+
+    .team-name {
+        font-size: 14px;
+        margin-bottom: 0px;
+        line-height: 16px;
+    }
+
+    .dlink {
+        margin: 0px;
+    }
+
+    #scrollBtn {
+        right: 25px;
+    }
+
 }
