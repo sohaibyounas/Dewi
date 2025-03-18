@@ -428,7 +428,7 @@
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
     gap: 40px;
-    padding-left: 50px;
+    padding-left: 80px;
 }
 
 #card{
@@ -727,8 +727,8 @@
 /* quote */ 
   .quot {
     font-size: 25px;
-    left: -5px;
-    top: 0px;
+    left: 0;
+    top: 0;
     color: #A1A7AC;
     display: inline-block;
     position: relative;
@@ -940,13 +940,6 @@
     padding-bottom: 120px;
 }
 
-.team-card{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 55px;
-}
-
 #Team{
     padding-top: 60px;
 }
@@ -969,6 +962,9 @@
     transform: translateX(-50%);
     width: 90%;
     padding: 8px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .tcard-body {
@@ -1543,6 +1539,15 @@
     right: -10px;
     bottom: -45px;
 }
+
+/* footer */
+    .main {
+        padding: 40px 20px 20px 0px;
+    }
+
+    .footer-para {
+        padding-top: 20px;
+    }
 }
 
 /* media queries 577px*/
@@ -1551,11 +1556,6 @@
     .card-body h5 {
         font-size: 30px;
     }
-
-/* services */
-    /* .svtext{
-        padding-left: 22px;
-    } */
 
     .cardd {
         width: 26rem;
@@ -1577,6 +1577,10 @@
 /* clients */
     .client{
         grid-template-columns: 1fr 1fr;
+    }
+
+    .client {
+        padding-left: 60px;
     }
 
     .cimg1 {
@@ -1613,6 +1617,10 @@
 
     .team-member {
         grid-template-columns: auto;
+    }
+
+    .zoomlink {
+        padding: 35px 0px 100px 200px;
     }
 
 /* contact form */
@@ -1659,6 +1667,11 @@
 /* client */
     .cimg1 {
         width: 167px;
+    }
+
+/* card */
+    .cardtext {
+        padding: 0px 0px 0px 45px;
     }
 
 /* feature */
@@ -1776,6 +1789,11 @@
         line-height: 20px;
         margin-bottom: 11px;
     }
+
+/* portfolio */
+    .zoomlink {
+        padding: 35px 0px 60px 200px;
+    }
 }
 
 /* media queries 320px*/
@@ -1831,7 +1849,7 @@
 
 /* client */
     .client {
-        padding-left: 10px;
+        padding-left: 12px;
         gap: 30px;
     }
 
@@ -1844,6 +1862,11 @@
     .slider-card p {
         font-size: 14px;
         margin-bottom: 10px;
+    }
+
+/* portfolio */
+    .zoomlink {
+        padding: 35px 0px 20px 200px;
     }
 
 /* team */
