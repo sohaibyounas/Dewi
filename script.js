@@ -1,3 +1,27 @@
+// counter function
+function counter(id, start, end, duration) {
+  let obj = document.getElementById(id),
+    current = start,
+    range = end - start,
+    increment = end > start ? 1 : -1,
+    step = Math.abs(Math.floor(duration / range)),
+    timer = setInterval(() => {
+      current += increment;
+      obj.textContent = current;
+      if (current === end) {
+        clearInterval(timer);
+      }
+    }, step);
+}
+
+// Call the function correctly (without "#")
+counter("counter1", 0, 232, 500);
+counter("counter2", 0, 521, 500);
+counter("counter3", 0, 1463, 500);
+counter("counter4", 0, 15, 500);
+
+
+
 // icon click small navbar toggle
 function headernav() {
   let nav = document.getElementById("smnav");
@@ -115,16 +139,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// dropdown toggle
-// document.querySelectorAll('.dropdown-toggle').forEach(item => {
-//   item.addEventListener('click', function (event) {
-//       let submenu = this.nextElementSibling;
-//       submenu.style.display = submenu.style.display === "block" ? "none" : "block";
-//       event.stopPropagation();
-//   });
-// });
-
-
 // Ensure navbar is closed on page load
 document.addEventListener('DOMContentLoaded', function () {
   let nav = document.getElementById('smnav');
@@ -161,3 +175,5 @@ const swiper = new Swiper('.mySwiper', {
     clickable: true,
   },
 });
+
+
