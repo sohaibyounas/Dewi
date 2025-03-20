@@ -1540,13 +1540,16 @@
     padding: 20px;
   }
 
-  /* slider */
-
   /* portfolio */
   .tabgrid,
   .dapps,
   .team-member {
     grid-template-columns: auto auto;
+  }
+
+  /* Team */
+  .team-name::after {
+    width: 100px;
   }
 
   /* contact form */
@@ -1677,6 +1680,11 @@
 
 /* media queries 426px*/
 @media screen and (max-width: 426px) {
+  /* nav */
+  .nav li a {
+    padding-left: 0px;
+  }
+
   /* banner */
   .text h1 {
     font-size: 34px;
@@ -1707,8 +1715,12 @@
   }
 
   /* client */
+  .client {
+    padding-left: 20px;
+  }
+
   .cimg1 {
-    width: 167px;
+    width: 150px;
   }
 
   /* card */
