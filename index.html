@@ -1,1278 +1,1800 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dewi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="./icons/favicon.svg" type="image/x-icon">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dewi - Digital Agency & Creative Studio</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons & FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css"
+    />
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./icons/favicon.svg" type="image/x-icon" />
   </head>
+
   <body>
-    <!-- hero section -->
+    <!-- Top Scroll Progress Bar (Framer Motion Linked) -->
+    <div id="scrollProgress" class="scroll-progress-bar"></div>
+
+    <!-- Mobile Navigation Backdrop Overlay -->
+    <div id="navBackdrop" class="nav-backdrop"></div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="smnav">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="logo-link">
+          <h2 class="logo-text">Dewi<span>.</span></h2>
+        </a>
+        <button
+          class="mobile-drawer-close"
+          id="mobileDrawerClose"
+          aria-label="Close menu"
+        >
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="#hero" class="mobile-nav-link active">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#service" class="mobile-nav-link">Services</a></li>
+        <li><a href="#portfolio" class="mobile-nav-link">Portfolio</a></li>
+        <li><a href="#Team" class="mobile-nav-link">Team</a></li>
+        <li class="mobile-nav-item">
+          <a
+            class="mobile-nav-link"
+            href="#service"
+            data-bs-toggle="collapse"
+            data-bs-target="#mobileDropdownMenu"
+            aria-expanded="false"
+          >
+            <span>Solutions &amp; Services</span>
+            <i class="bi bi-chevron-down"></i>
+          </a>
+          <div class="collapse" id="mobileDropdownMenu">
+            <div class="mobile-nav-dropdown-menu">
+              <a class="mobile-nav-sublink" href="#service"
+                ><i class="bi bi-palette text-primary me-2"></i> UI/UX Design</a
+              >
+              <a class="mobile-nav-sublink" href="#service"
+                ><i class="bi bi-code-slash text-primary me-2"></i> Web
+                Development</a
+              >
+              <a class="mobile-nav-sublink" href="#service"
+                ><i class="bi bi-phone text-primary me-2"></i> Mobile Apps</a
+              >
+              <a
+                class="mobile-nav-sublink"
+                href="#service"
+                data-bs-toggle="collapse"
+                data-bs-target="#mobileDeepDropdown"
+                aria-expanded="false"
+              >
+                <span
+                  class="d-flex align-items-center justify-content-between w-100"
+                >
+                  <span
+                    ><i class="bi bi-cpu text-primary me-2"></i> Deep
+                    Solutions</span
+                  >
+                  <i
+                    class="bi bi-chevron-down ms-1"
+                    style="font-size: 11px"
+                  ></i>
+                </span>
+              </a>
+              <div class="collapse ps-3" id="mobileDeepDropdown">
+                <a class="mobile-nav-sublink" href="#service"
+                  ><i class="bi bi-cloud text-primary me-2"></i> Cloud &amp;
+                  DevOps</a
+                >
+                <a class="mobile-nav-sublink" href="#service"
+                  ><i class="bi bi-shield-lock text-primary me-2"></i>
+                  Cybersecurity</a
+                >
+                <a class="mobile-nav-sublink" href="#service"
+                  ><i class="bi bi-robot text-primary me-2"></i> AI Solutions</a
+                >
+                <a class="mobile-nav-sublink" href="#service"
+                  ><i class="bi bi-graph-up text-primary me-2"></i> Data
+                  Analytics</a
+                >
+              </div>
+              <a class="mobile-nav-sublink" href="#service"
+                ><i class="bi bi-megaphone text-primary me-2"></i> Digital
+                Marketing</a
+              >
+              <a class="mobile-nav-sublink" href="#service"
+                ><i class="bi bi-lightbulb text-primary me-2"></i> Tech
+                Consulting</a
+              >
+            </div>
+          </div>
+        </li>
+        <li><a href="#Contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="#about" class="btn-primary-glow w-100 text-center"
+          >Get Started</a
+        >
+      </div>
+    </div>
+
+    <!-- Main Header -->
+    <header id="main-header">
+      <div class="container">
+        <div class="header-container">
+          <!-- Logo -->
+          <a href="index.html" class="logo-link">
+            <h2 class="logo-text">Dewi<span>.</span></h2>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="d-none d-lg-block">
+            <ul class="nav">
+              <li class="active"><a href="#hero" class="nav-link">Home</a></li>
+              <li><a href="#about" class="nav-link">About</a></li>
+              <li><a href="#service" class="nav-link">Services</a></li>
+              <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+              <li><a href="#Team" class="nav-link">Team</a></li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="desktopDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Solutions &amp; Services
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-modern"
+                  aria-labelledby="desktopDropdown"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#service"
+                      ><i class="bi bi-palette text-primary me-2"></i> UI/UX
+                      &amp; Product Design</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#service"
+                      ><i class="bi bi-code-slash text-primary me-2"></i> Custom
+                      Web Development</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#service"
+                      ><i class="bi bi-phone text-primary me-2"></i> Mobile App
+                      Engineering</a
+                    >
+                  </li>
+                  <li class="dropdown-divider"></li>
+                  <!-- Nested Deep Dropdown -->
+                  <li class="dropdown-submenu">
+                    <a
+                      class="dropdown-item dropdown-toggle d-flex align-items-center justify-content-between"
+                      href="#service"
+                    >
+                      <span
+                        ><i class="bi bi-cpu text-primary me-2"></i> Deep
+                        Solutions</span
+                      >
+                    </a>
+                    <ul class="dropdown-menu submenu">
+                      <li>
+                        <a class="dropdown-item" href="#service"
+                          ><i class="bi bi-cloud text-primary me-2"></i> Cloud
+                          &amp; DevOps</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#service"
+                          ><i class="bi bi-shield-check text-primary me-2"></i>
+                          Cybersecurity</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#service"
+                          ><i class="bi bi-robot text-primary me-2"></i> AI
+                          Solutions</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#service"
+                          ><i class="bi bi-graph-up text-primary me-2"></i> Data
+                          Analytics</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown-divider"></li>
+                  <li>
+                    <a class="dropdown-item" href="#service"
+                      ><i class="bi bi-megaphone text-primary me-2"></i> Digital
+                      Marketing &amp; SEO</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#service"
+                      ><i class="bi bi-lightbulb text-primary me-2"></i> Tech
+                      Strategy Consulting</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#Contact" class="nav-link">Contact</a></li>
+            </ul>
+          </nav>
+
+          <!-- Header Actions -->
+          <div class="header-actions">
+            <a href="#about" class="btn-header-cta d-none d-sm-inline-flex"
+              >Get Started</a
+            >
+            <button
+              class="mobile-toggle d-lg-none"
+              id="toggle-icon"
+              aria-label="Toggle navigation"
+            >
+              <i class="bi bi-list"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
     <section id="hero">
-        <!-- hero bg image -->
-        <div class="herobg position-relative">
-          <div class="clr" data-aos="fade-up"> 
-            <div class="container">
-              <!-- collapse nav -->
-               <div class="mdnav fixed-top" id="smnav">
-                <!-- <div class="midnav"> -->
-                  <ul class="nav mb-lg-0 mb-md-0 me-lg-3 me-md-3 d-lg-none d-md-block d-sm-block d-block">
-                    <li><a href="index.html" class="nav-link px-2 active mb-2" style="color: #ff4500;">Home</a></li>
-                    <li><a href="#about" class="nav-link px-2 mb-2">About</a></li>
-                    <li><a href="#service" class="nav-link px-2 mb-2">Services</a></li>
-                    <li><a href="#portfolio" class="nav-link px-2 mb-2">Porfolio</a></li>
-                    <li><a href="#Team" class="nav-link px-2">Team</a></li>
-
-                    <!-- dropdown -->
-                    <li class="nav-item dropdown px-2 mb-2">
-                      <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false" style="color: #444444;"> Dropdown </a>
-                      <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                        <li><a class="dropdown-item text-dark" href="#">Dropdown1</a></li>
-
-                        <!-- nested dropdown -->
-                        <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                          </a>
-                          <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                            <li><a class="dropdown-item" href="#">Dropdown1</a></li>
-                            <li><a class="dropdown-item" href="#">Dropdown2</a></li>
-                            <li><a class="dropdown-item" href="#">Dropdown3</a></li>
-                            <li><a class="dropdown-item" href="#">Dropdown4</a></li>
-                          </ul>
-                        </li>
-                        <li><a class="dropdown-item" href="#">Dropdown2</a></li>
-                        <li><a class="dropdown-item" href="#">Dropdown3</a></li>
-                        <li><a class="dropdown-item" href="#">Dropdown4</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#Contact" class="nav-link text-light">Contact</a></li>
-                  </ul>
-                <!-- </div> -->
-               </div>
-              <!-- collapse nav ends -->
-
-              <header class="d-flex align-items-center fixed-top justify-content-between py-lg-3 py-md-3 py-sm-2 py-2 mb-lg-4 mb-md-4 mb-sm-3 w-100 top-0" id="main-header">
-                <!-- logo -->
-                 <div class="container">
-                  <div class="row">
-                    <div class="test">
-                      <div class="htext">
-                        <a href="index.html" class="text-decoration-none">
-                          <h2 class="text-light">Dewi</h2>
-                        </a>
-                      </div>
-                      <!-- lg main nav -->
-                       <div class="lg d-lg-block d-md-none d-sm-none d-none ms-auto">
-                         <ul class="nav align-items-center mb-lg-0 mb-md-0 me-lg-3 me-md-3">
-                           <li class="active"><a href="#hero" class="nav-link text-light">HOME</a></li>
-                           <li><a href="#about" class="nav-link text-light">ABOUT</a></li>
-                           <li><a href="#service" class="nav-link text-light">SERVICES</a></li>
-                           <li><a href="#portfolio" class="nav-link text-light">PORTFOLIO</a></li>
-                           <li><a href="#Team" class="nav-link text-light">TEAM</a></li>
-
-                           <!-- dropdown menu -->
-                           <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-light" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">DROPDOWN</a>
-                            <ul class="dropdown-menu dmenu" aria-labelledby="dropdown03">
-                              <li><a class="dropdown-item" href="#">Dropdown 1</a></li>
-
-                              <!-- nesteddropdown -->
-                              <li class="nav-item dropdown">
-                                <a class="dropdown-item dropdown-toggle" href="#" id="nestedDropdown" data-bs-toggle="dropdown" aria-expanded="false">Deep Dropdown</a>
-                                <ul class="dropdown-menu submenu" aria-labelledby="nestedDropdown">
-                                  <li><a class="dropdown-item" href="#">Deep Dropdown 1</a></li>
-                                  <li><a class="dropdown-item" href="#">Deep Dropdown 2</a></li>
-                                  <li><a class="dropdown-item" href="#">Deep Dropdown 3</a></li>
-                                  <li><a class="dropdown-item" href="#">Deep Dropdown 4</a></li>
-                                </ul>
-                              </li>
-                              <li><a class="dropdown-item" href="#">Dropdown 2</a></li>
-                              <li><a class="dropdown-item" href="#">Dropdown 3</a></li>
-                              <li><a class="dropdown-item" href="#">Dropdown 4</a></li>
-                            </ul>
-                          </li>
-                          <!-- dropdown ends -->
-                          <li><a href="#Contact" class="nav-link px-2 text-light">CONTACT</a></li>
-                        </ul>
-                       </div>
-                       <div class="mi">
-                        <a href="#about">
-                          <button type="button" class="btn btn-outline-light me-3 text-light">GET STARTED</button>
-                        </a>
-                        <span>
-                          <i class="bi bi-list blist d-lg-none" onclick="headernav()" id="toggle-icon"></i>
-                        </span>
-                      </div>
-                      <!-- navbar end -->
-                    </div>
-                  </div>
-                 </div>
-                </header>
-                <!-- header ends -->
-                <!-- banner -->
-                <div class="container">
-                  <div class="text text-center py-lg-5 py-md-2 py-sm-3 py-3 my-lg-5 my-md-5 my-sm-4 my-3 text-white" >
-                    <h1>PLAN. LAUNCH. GROW.</h1>
-                      <p>We are team of talented designers making websites with Bootstrap</p>
-                      <div class="buton">
-                        <button type="button" class="bttn btn-outline-light">
-                          <a href="#about" class="text-decoration-none text-white">GET STARTED</a>
-                        </button>
-                        <button type="button" class="wbtn" >
-                          <i class="bi bi-play-circle bticon me-2" ></i> 
-                          <h5 class="m-0">Watch Video</h5>
-                        </button>
-                      </div>
-                  </div>
-                </div>
-                <!-- banner ends -->      
+      <div class="herobg">
+        <div class="clr">
+          <div class="container">
+            <div class="hero-content">
+              <span class="hero-badge">
+                <i class="bi bi-stars"></i> Next Generation Agency
+              </span>
+              <h1 class="hero-title">PLAN. LAUNCH. GROW.</h1>
+              <p class="hero-description">
+                We are a passionate team of talented digital creators, crafting
+                high-performance websites and extraordinary experiences.
+              </p>
+              <div class="hero-buttons">
+                <a href="#about" class="btn-primary-glow">Get Started</a>
+                <button type="button" class="btn-watch-video">
+                  <i class="bi bi-play-circle-fill"></i>
+                  <span>Watch Video</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
-    </section>
-<!-- Hero section End -->
-
-<!-- about section -->
-    <section id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-md-12 col-sm-12 col-12" data-aos="fade-up">
-            <h4 class="title fw-bold pt-lg-5 pt-md-5 pt-sm-4 pt-4 pb-lg-3 pb-md-3 pb-sm-2 pb-2">
-              Voluptatem dignissimos provident laboris nisi ut aliquip ex ea commodo</h4>
-            <div class="img1">
-              <img src="./images/about.jpg" alt="about" class="img-fluid rounded-4">
-              <div class="cip pt-3">
-                <p>Ut fugiat ut sunt quia veniam. Voluptate perferendis perspiciatis quod nisi et. Placeat debitis quia recusandae odit et consequatur voluptatem. Dignissimos pariatur consectetur fugiat voluptas ea.</p>
-                <p>Temporibus nihil enim deserunt sed ea. Provident sit expedita aut cupiditate nihil vitae quo officia vel. Blanditiis eligendi possimus et in cum. Quidem eos ut sint rem veniam qui. Ut ut repellendus nobis tempore doloribus debitis explicabo similique sit. Accusantium sed ut omnis beatae neque deleniti repellendus.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12 col-sm-12 col-12 px-lg-5 px-md-5 px-sm-3 px-3" data-aos="fade-up" data-aos-duration="500">
-            <p class="ptext pt-lg-5 pt-md-5 pt-sm-4 pt-4 ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <div class="para">
-              <p><span><i class="fa-light fa-circle-check bcircle"></i></span> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <p><span><i class="fa-light fa-circle-check bcircle"></i></span> Duis aute irure dolor in reprehenderit in voluptate velit. </p>
-              <p><span><i class="fa-light fa-circle-check bcircle"></i></span> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</p>
-            </div>
-            <p class="para4"> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
-            <div class="img2 position-relative">
-              <img src="./images/about-2.jpg" alt="about-2" class="img-fluid rounded-4 video-image">
-              <div class="play-button">
-                <span><i class="fas fa-play fplay"></i></span>
-              </div>
-            </div>
-          </div>
       </div>
     </section>
-<!-- about section end -->
 
-<!-- card section  -->
+    <!-- ==========================================================================
+         ABOUT SECTION
+         ========================================================================== -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <!-- Col 1 -->
+          <div class="col-lg-6 col-md-12">
+            <div class="about-content-left">
+              <span class="section-badge">About Us</span>
+              <h3 class="about-title">
+                Voluptatem dignissimos provident laboris nisi ut aliquip ex ea
+                commodo
+              </h3>
+              <div class="about-img-box">
+                <img
+                  src="./images/about.jpg"
+                  alt="About Dewi"
+                  class="img-fluid rounded-4"
+                />
+              </div>
+              <p class="text-muted mb-3">
+                Ut fugiat ut sunt quia veniam. Voluptate perferendis
+                perspiciatis quod nisi et. Placeat debitis quia recusandae odit
+                et consequatur voluptatem. Dignissimos pariatur consectetur
+                fugiat voluptas ea.
+              </p>
+              <p class="text-muted">
+                Temporibus nihil enim deserunt sed ea. Provident sit expedita
+                aut cupiditate nihil vitae quo officia vel. Blanditiis eligendi
+                possimus et in cum. Quidem eos ut sint rem veniam qui.
+              </p>
+            </div>
+          </div>
+
+          <!-- Col 2 -->
+          <div class="col-lg-6 col-md-12">
+            <div class="about-content-right">
+              <p class="about-lead">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <ul class="about-list">
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span
+                    >Ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span
+                    >Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum.</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check-circle-fill"></i>
+                  <span
+                    >Ullamco laboris nisi ut aliquip ex ea commodo consequat
+                    trideta storacalaperda mastiro dolore eu fugiat.</span
+                  >
+                </li>
+              </ul>
+              <p class="text-muted mb-4">
+                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                aute irure dolor in reprehenderit in voluptate velit esse cillum
+                dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident.
+              </p>
+              <div class="video-thumb-box">
+                <img
+                  src="./images/about-2.jpg"
+                  alt="Dewi agency video thumbnail"
+                  class="img-fluid"
+                />
+                <div
+                  class="play-button"
+                  role="button"
+                  aria-label="Play introduction video"
+                >
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         STATS / COUNTER SECTION
+         ========================================================================== -->
     <section id="card">
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-          <div class="cadrs py-lg-5 py-md-5 py-sm-5 py-3 my-lg-3">
-            <!-- card 1 -->
-              <div class="card border-0 rounded-0 shadow">
-                <div class="card-body d-flex align-items-center gap-4">
-                  <span><i class="bi bi-emoji-smile cdbi"></i></span>
-                  <div>  
-                    <h5 id="counter1" class="card-title fw-bold"> 232 </h5>
-                    <p class="card-text">Happy Clients</p>
-                  </div>
-                </div>
-              </div>
-            <!-- card 2 -->
-              <div class="card border-0 rounded-0 shadow">
-                <div class="card-body d-flex align-items-center gap-4">
-                  <span><i class="bi bi-journal-richtext cdbi"></i></span>
-                  <div>
-                    <h5 id="counter2" class="card-title fw-bold"> 232 </h5>
-                    <p class="card-text">Projects</p>
-                  </div>
-                </div>
-              </div>
-            <!-- card 3 -->
-              <div class="card border-0 rounded-0 shadow">
-                <div class="card-body d-flex align-items-center gap-4">
-                  <span><i class="bi bi-headset cdbi"></i></span>
-                  <div>
-                    <h5 id="counter3" class="card-title fw-bold">1463 </h5>
-                      <p class="card-text">Hours Of Support</p>
-                  </div>
-                </div>
-              </div>
-            <!-- card 4 -->
-              <div class="card border-0 rounded-0 shadow">
-                <div class="card-body d-flex align-items-center gap-4">
-                  <span><i class="bi bi-people cdbi"></i></span>
-                  <div>
-                    <h5 id="counter4" class="card-title fw-bold">15</h5>
-                    <p class="card-text">Hard Workers</p>
-                  </div>
-                </div>
-              </div>
+      <div class="container">
+        <div class="stat-grid">
+          <!-- Card 1 -->
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="bi bi-emoji-smile"></i>
+            </div>
+            <div>
+              <h3 id="counter1" class="stat-number">232</h3>
+              <p class="stat-label">Happy Clients</p>
+            </div>
           </div>
-          <!--cards ends  -->
-        </div>
-        <!-- row ends -->
-      </div>
-    </section>
-<!-- card section ends -->
-
-<!-- Service -->
-    <section id="service">
-      <div class="container" data-aos="fade-up">
-        <div class="row">
-          <div class="svtext pt-lg-5 pt-md-5 pt-sm-5 pt-3 mt-md-0 mt-sm-2 mt-2">
-            <p class="sub-title d-flex align-items-center">SERVICES</p>
-              <h2 class="main-title fw-bold">FEATURED SERVICES</h2>
+          <!-- Card 2 -->
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="bi bi-journal-richtext"></i>
+            </div>
+            <div>
+              <h3 id="counter2" class="stat-number">521</h3>
+              <p class="stat-label">Projects</p>
+            </div>
           </div>
-          <div class="images row py-lg-3 py-md-3 py-sm-2 py-2 mb-lg-5 mb-md-5 mb-sm-3 mb-3">
-            <!-- image1 hover -->
-            <div class="img1-hvr col-lg-4 col-md-6 col-sm-12 col-12">
-              <!-- image1 -->
-              <div class="service-images py-lg-5 py-md-5 py-sm-5 py-3 my-lg-3 position-relative ">
-                <div class="simg1 overflow-hidden" data-aos="zoom-in"
-                data-aos-duration="500">
-                  <img src="./images/services-1.jpg" alt="service-1" class="img-fluid rounded-3">
-                </div>
-                <!-- card -->
-                <div class="cardd bg-white shadow">
-                  <div class="icon">
-                    <i class="bi bi-activity icn"></i>
-                  </div>
-                  <div class="card-body card-txt cardp">
-                    <h5 class="card-title fw-bold px-lg-5 px-md-5 px-sm-0 px-0 pt-lg-4 pt-md-4 pt-sm-3 pt-3">Nesciunt Mete</h5>
-                      <p class="card-text pt-lg-3 pt-md-3 pt-sm-2 pt-2">
-                        Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis.</p>
-                  </div>
-                </div>
-              </div>
+          <!-- Card 3 -->
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="bi bi-headset"></i>
             </div>
-
-            <!-- image2 -->
-            <div class="img1-hvr col-lg-4 col-md-6 col-sm-12 col-12">
-              <div class="servimg">
-                <div class="service-images py-lg-5 py-md-5 py-sm-5 py-3 my-lg-3 position-relative">
-                  <div class="simg2 overflow-hidden" data-aos="zoom-in"
-                  data-aos-duration="1000">
-                    <img src="./images/services-2.jpg" alt="service-2" class="img-fluid rounded-3">
-                  </div>
-                  <!-- card -->
-                  <div class="cardd bg-white shadow">
-                    <div class="icon">
-                      <i class="bi bi-broadcast icn"></i>
-                    </div>
-                    <div class="card-body card-txt">
-                      <h5 class="card-title fw-bold px-lg-5 px-md-5 px-sm-0 px-0 pt-lg-4 pt-md-4 pt-sm-3 pt-3">Eosle Commodi</h5>
-                      <p class="card-text pt-lg-3 pt-md-3 pt-sm-2 pt-2">
-                        Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div>
+              <h3 id="counter3" class="stat-number">1463</h3>
+              <p class="stat-label">Hours Of Support</p>
             </div>
-            <!-- image3 -->
-            <div class="img1-hvr col-lg-4 col-md-6 col-sm-12 col-12">
-              <div class="svimage">
-                <div class="service-images py-lg-5 py-md-5 py-sm-5 py-3 my-lg-3 position-relative">
-                  <div class="simg3 overflow-hidden" data-aos="zoom-in"
-                  data-aos-duration="1500">
-                    <img src="./images/services-3.jpg" alt="service-2" class="img-fluid rounded-3">
-                  </div>
-                  <!-- card -->
-                  <div class="cardd bg-white shadow">
-                    <div class="icon">
-                      <i class="bi bi-easel icn"></i>
-                    </div>
-                    <div class="card-body card-txt">
-                      <h5 class="card-title fw-bold px-lg-5 px-md-5 px-sm-0 px-0 pt-lg-4 pt-md-4 pt-sm-3 pt-3">Ledo Markt</h5>
-                      <p class="card-text pt-lg-3 pt-md-3 pt-sm-2 pt-2">
-                        Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="bi bi-people"></i>
             </div>
-            <!-- service card images end -->
+            <div>
+              <h3 id="counter4" class="stat-number">15</h3>
+              <p class="stat-label">Hard Workers</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
-<!-- service ends -->
 
-<!-- clients -->
+    <!-- ==========================================================================
+         SERVICES SECTION
+         ========================================================================== -->
+    <section id="service" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Services</span>
+          <h2 class="section-title">FEATURED SERVICES</h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <!-- Service Card 1 -->
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="service-card-wrapper">
+              <div class="service-img-container">
+                <img
+                  src="./images/services-1.jpg"
+                  alt="Nesciunt Mete Service"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="service-floating-card">
+                <div class="service-icon-bubble">
+                  <i class="bi bi-activity"></i>
+                </div>
+                <h4 class="service-card-title">Nesciunt Mete</h4>
+                <p class="service-card-desc">
+                  Provident nihil minus qui consequatur non omnis maiores. Eos
+                  accusantium minus dolores iure perferendis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="service-card-wrapper">
+              <div class="service-img-container">
+                <img
+                  src="./images/services-2.jpg"
+                  alt="Eosle Commodi Service"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="service-floating-card">
+                <div class="service-icon-bubble">
+                  <i class="bi bi-broadcast"></i>
+                </div>
+                <h4 class="service-card-title">Eosle Commodi</h4>
+                <p class="service-card-desc">
+                  Ut autem aut autem non a. Sint sint sit facilis nam iusto
+                  sint. Libero corrupti neque eum hic non ut nesciunt dolorem.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="service-card-wrapper">
+              <div class="service-img-container">
+                <img
+                  src="./images/services-3.jpg"
+                  alt="Ledo Markt Service"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="service-floating-card">
+                <div class="service-icon-bubble">
+                  <i class="bi bi-easel"></i>
+                </div>
+                <h4 class="service-card-title">Ledo Markt</h4>
+                <p class="service-card-desc">
+                  Ut excepturi voluptatem nisi sed. Quidem fuga consequatur.
+                  Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CLIENTS SECTION
+         ========================================================================== -->
     <section id="clients">
-      <div class="bg-color mt-lg-5 mt-md-5 mt-sm-3 mt-5">
-        <div class="container">
-          <div class="row">
-            <div class="client py-lg-5 py-md-5 py-sm-5 py-3" data-aos="fade-up">
-              <!-- cimg1 -->
-                <div class="cimg1">
-                  <img src="./clients/client-1.png" alt="client-1" class="img-fluid" >
-                </div>
-
-              <!-- cimg2 -->
-                <div class="cimg1">
-                  <img src="./clients/client-2.png" alt="client-2" class="img-fluid" >
-                </div>
-  
-              <!-- cimg3 -->
-                <div class="cimg1">
-                  <img src="./clients/client-3.png" alt="client-3" class="img-fluid" >
-                </div>
-  
-              <!-- cimg4 -->
-                <div class="cimg1">
-                  <img src="./clients/client-4.png" alt="client-4" class="img-fluid" >
-                </div>
-  
-              <!-- cimg5 -->
-                <div class="cimg1">
-                  <img src="./clients/client-5.png" alt="client-5" class="img-fluid" >
-                </div>
-  
-              <!-- cimg6 -->
-                <div class="cimg1">
-                  <img src="./clients/client-6.png" alt="client-6" class="img-fluid" >
-                </div>
-              <!-- client images ends -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-<!-- clientst ends -->
-
-<!--  feature section-->
-    <section id="feature">
       <div class="container">
-        <div class="row">
-          <div class="feature">
-            <div class="row">
-              <div class="pt-5" data-aos="fade-up">
-                <!-- feature card 1 -->
-                <div class="grid">
-                  <div class="card border-0 rounded-0 ftcrd">
-                    <div class="card-body d-flex align-items-center cdbody">
-                      <i class="bi bi-binoculars cdb1"></i>
-                      <div>
-                        <h4 class="card-title fw-bold d-lg-block d-md-none d-sm-none d-none text-white" style="padding-left: 15px;">
-                          Modi sit est dela pireda nest</h4>
-                      </div>
-                    </div>
-                  </div>
-                <!-- card 2 -->
-                  <div class="card rounded-0">
-                    <div class="card-body d-flex align-items-center gap-4 cdbody">
-                      <span><i class="bi bi-box-seam cdb"></i></span>
-                      <div>
-                        <h4 class="card-title fw-bold d-lg-block d-md-none d-sm-none d-none">
-                          Unde praesenti mara setra le</h4>
-                      </div>
-                    </div>
-                  </div>
-                <!-- card 3 -->
-                  <div class="card rounded-0">
-                    <div class="card-body d-flex align-items-center gap-4 cdbody">
-                      <span><i class="bi bi-brightness-high cdb"></i></span>
-                      <div>
-                        <h4 class="card-title fw-bold d-lg-block d-md-none d-sm-none d-none">
-                          Pariatur explica nitro dela</h4>
-                      </div>
-                    </div>
-                  </div>
-                <!-- card 4 -->
-                  <div class="card rounded-0">
-                    <div class="card-body d-flex align-items-center gap-4 cdbody">
-                      <span><i class="bi bi-command cdb"></i></span>
-                      <div>
-                        <h4 class="card-title fw-bold d-lg-block d-md-none d-sm-none d-none">
-                          Nostrum qui dile node</h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!--cards ends  -->
-            </div>
-            <!-- feature para-->
-            <div class="feature-area mb-lg-5 mb-md-5 mb-sm-3 mb-3" data-aos="fade-up">
-              <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-1 order-md-2 order-sm-2">
-                  <h4 class="title fw-bold pt-lg-5 pt-md-4 pt-sm-4 pt-4">
-                    Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <div class="para">
-                      <p><span><i class="bi bi-check2-all pri"></i></span> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                      <p><span><i class="bi bi-check2-all pri"></i></i></span> Duis aute irure dolor in reprehenderit in voluptate velit. </p>
-                      <p><span><i class="bi bi-check2-all pri"></i></i></span> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                    <p class="para5">Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-2 order-md-1 order-sm-1 d-flex align-items-center">
-                  <div class="featr d-sm-block d-none">
-                    <img src="./images/working-1.jpg" alt="working-1" class="img-fluid pt-lg-3 pt-md-5 pt-sm-5 pt-2">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- feature para ends-->
+        <div class="clients-flex">
+          <div class="client-logo-item">
+            <img
+              src="./clients/client-1.png"
+              alt="Client 1 Logo"
+              class="img-fluid"
+            />
           </div>
-          <!-- feature end -->
-        </div>
-      </div>
-    </section>
-<!--  feature section ends -->
-
-<!-- CHECK OUR SERVICES -->
-    <section id="check-service">
-      <div class="servcs">
-        <div class="container">
-          <div class="row">
-            <div class="check" data-aos="fade-up">
-              <div class="svtext pt-lg-5 pt-md-5 pt-sm-4 pt-4">
-                <p class="sub-title d-flex align-items-center">SERVICES</p>
-                  <h2 class="main-title fw-bold">CHECK OUR SERVICES</h2>
-              </div>
-              </div>
-              <!-- check card -->
-              <div class="check-card py-lg-5 py-md-5 py-sm-3 py-3">
-                <!-- service card  -->
-                  <div class="srvcecard">
-                    <!-- feature card 1 -->
-                    <div class="card rounded-0 chcrd" data-aos="fade-up">
-                      <div class="card-body d-flex gap-4">
-                        <i class="bi bi-briefcase chkb"></i>
-                          <div>
-                            <h4 class="card-title fw-bold">Lorem Ipsum</h4>
-                            <p class="card-para">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-                          </div>
-                      </div>
-                    </div>
-                    <!-- feature card 2 -->
-                    <div class="card rounded-0 chcrd" data-aos="fade-up">
-                      <div class="card-body d-flex gap-4">
-                        <i class="bi bi-card-checklist chkb"></i>
-                        <div>
-                          <h4 class="card-title fw-bold">Dolor Sitema</h4>
-                          <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata i</p>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- feature card 3 -->
-                    <div class="card rounded-0 chcrd" data-aos="fade-up">
-                      <div class="card-body d-flex gap-4">
-                        <i class="bi bi-bar-chart chkb"></i>
-                          <div>
-                            <h4 class="card-title fw-bold">Sed ut perspiciatis</h4>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-                          </div>
-                      </div>
-                    </div>
-                    <!-- feature card 4 -->
-                    <div class="card rounded-0 chcrd" data-aos="fade-up">
-                      <div class="card-body d-flex gap-4">
-                        <i class="bi bi-binoculars chkb"></i>
-                        <div>
-                          <h4 class="card-title fw-bold">Magni Dolores</h4>
-                          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- feature card 5 -->
-                    <div class="card rounded-0 chcrd" data-aos="fade-up">
-                      <div class="card-body d-flex gap-4">
-                        <i class="bi bi-brightness-high chkb"></i>
-                        <div>
-                          <h4 class="card-title fw-bold">Nemo Enim</h4>
-                          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- feature card 6 -->
-                    <div class="card rounded-0 chcrd" data-aos="fade-up">
-                      <div class="card-body d-flex gap-4">
-                        <i class="bi bi-calendar-week chkb"></i>
-                        <div>
-                          <h4 class="card-title fw-bold">Eiusmod Tempor</h4>
-                          <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- service card ends  -->
-              </div>
+          <div class="client-logo-item">
+            <img
+              src="./clients/client-2.png"
+              alt="Client 2 Logo"
+              class="img-fluid"
+            />
+          </div>
+          <div class="client-logo-item">
+            <img
+              src="./clients/client-3.png"
+              alt="Client 3 Logo"
+              class="img-fluid"
+            />
+          </div>
+          <div class="client-logo-item">
+            <img
+              src="./clients/client-4.png"
+              alt="Client 4 Logo"
+              class="img-fluid"
+            />
+          </div>
+          <div class="client-logo-item">
+            <img
+              src="./clients/client-5.png"
+              alt="Client 5 Logo"
+              class="img-fluid"
+            />
+          </div>
+          <div class="client-logo-item">
+            <img
+              src="./clients/client-6.png"
+              alt="Client 6 Logo"
+              class="img-fluid"
+            />
           </div>
         </div>
       </div>
     </section>
-<!-- CHECK OUR SERVICES ends -->
 
-<!-- Slider -->
+    <!-- ==========================================================================
+         FEATURES SECTION
+         ========================================================================== -->
+    <section id="feature" class="section-padding">
+      <div class="container">
+        <!-- 4 Feature Cards Grid -->
+        <div class="feature-cards-grid">
+          <div class="feature-pill-card active">
+            <i class="bi bi-binoculars feature-pill-icon"></i>
+            <h4 class="feature-pill-title">Modi sit est dela pireda nest</h4>
+          </div>
+          <div class="feature-pill-card">
+            <i class="bi bi-box-seam feature-pill-icon"></i>
+            <h4 class="feature-pill-title">Unde praesenti mara setra le</h4>
+          </div>
+          <div class="feature-pill-card">
+            <i class="bi bi-brightness-high feature-pill-icon"></i>
+            <h4 class="feature-pill-title">Pariatur explica nitro dela</h4>
+          </div>
+          <div class="feature-pill-card">
+            <i class="bi bi-command feature-pill-icon"></i>
+            <h4 class="feature-pill-title">Nostrum qui dile node</h4>
+          </div>
+        </div>
+
+        <!-- Feature Detail Row -->
+        <div class="feature-detail-row">
+          <div class="feature-detail-content">
+            <h3 class="about-title">
+              Voluptatem dignissimos provident quasi corporis voluptates sit
+              assumenda.
+            </h3>
+            <p class="text-muted mb-3">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <ul class="about-list">
+              <li>
+                <i class="bi bi-check2-all"></i>
+                <span
+                  >Ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.</span
+                >
+              </li>
+              <li>
+                <i class="bi bi-check2-all"></i>
+                <span
+                  >Duis aute irure dolor in reprehenderit in voluptate
+                  velit.</span
+                >
+              </li>
+              <li>
+                <i class="bi bi-check2-all"></i>
+                <span
+                  >Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate trideta
+                  storacalaperda.</span
+                >
+              </li>
+            </ul>
+            <p class="text-muted">
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+              irure dolor in reprehenderit in voluptate velit esse cillum dolore
+              eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident.
+            </p>
+          </div>
+          <div class="feature-detail-img">
+            <img
+              src="./images/working-1.jpg"
+              alt="Team collaborating"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CHECK OUR SERVICES SECTION
+         ========================================================================== -->
+    <section id="check-service" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Services</span>
+          <h2 class="section-title">CHECK OUR SERVICES</h2>
+        </div>
+        <div class="services-grid-box">
+          <div class="service-item-card">
+            <i class="bi bi-briefcase service-item-icon"></i>
+            <div>
+              <h4 class="service-item-title">Lorem Ipsum</h4>
+              <p class="service-item-desc">
+                Voluptatum deleniti atque corrupti quos dolores et quas
+                molestias excepturi sint occaecati cupiditate non provident.
+              </p>
+            </div>
+          </div>
+          <div class="service-item-card">
+            <i class="bi bi-card-checklist service-item-icon"></i>
+            <div>
+              <h4 class="service-item-title">Dolor Sitema</h4>
+              <p class="service-item-desc">
+                Minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat tarad limino ata i.
+              </p>
+            </div>
+          </div>
+          <div class="service-item-card">
+            <i class="bi bi-bar-chart service-item-icon"></i>
+            <div>
+              <h4 class="service-item-title">Sed ut perspiciatis</h4>
+              <p class="service-item-desc">
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur.
+              </p>
+            </div>
+          </div>
+          <div class="service-item-card">
+            <i class="bi bi-binoculars service-item-icon"></i>
+            <div>
+              <h4 class="service-item-title">Magni Dolores</h4>
+              <p class="service-item-desc">
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+          <div class="service-item-card">
+            <i class="bi bi-brightness-high service-item-icon"></i>
+            <div>
+              <h4 class="service-item-title">Nemo Enim</h4>
+              <p class="service-item-desc">
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                blanditiis praesentium voluptatum deleniti atque.
+              </p>
+            </div>
+          </div>
+          <div class="service-item-card">
+            <i class="bi bi-calendar-week service-item-icon"></i>
+            <div>
+              <h4 class="service-item-title">Eiusmod Tempor</h4>
+              <p class="service-item-desc">
+                Et harum quidem rerum facilis est et expedita distinctio. Nam
+                libero tempore, cum soluta nobis est eligendi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TESTIMONIALS SLIDER SECTION
+         ========================================================================== -->
     <section id="sliders">
-      <div class="slider-bg">
-        <div class="bg-colr">
-          <div class="container">
-            <div class="slider-container">
-              <!-- Bootstrap Carousel Start -->
-                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                  <!-- Carousel Indicators -->
-                    <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
-                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
-                    </div>
-
-                    <!-- Carousel Wrapper -->
-                      <div class="carousel-inner">
-                        <!-- Card 1 -->
-                          <div class="carousel-item active" data-aos="fade-left">
-                            <div class="slider-card d-flex align-items-center flex-column">
-                              <div class="profile-pic">
-                                <img src="./testimonials/testimonials-1.jpg" alt="Saul Goodman">
-                              </div>
-                              <h2>Saul Goodman</h2>
-                              <p>CEO & Founder</p>
-                              <div class="rating">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                              </div>
-                              <p class="detail">
-                                <span><i class="fa-solid fa-quote-left quot"></i></span>
-                                Proin iaculis purus consequat sem cure dignissim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                                <span><i class="fa-solid fa-quote-right quote"></i></span>
-                              </p>
-                            </div>
-                          </div>
-  
-                          <!-- Card 2 -->
-                            <div class="carousel-item" data-aos="fade-left">
-                              <div class="slider-card d-flex align-items-center flex-column">
-                                <div class="profile-pic">
-                                  <img src="./testimonials/testimonials-2.jpg" alt="Jane Doe">
-                                </div>
-                                <h2>Jane Doe</h2>
-                                <p>Marketing Lead</p>
-                                <div class="rating">
-                                  <i class="bi bi-star-fill"></i>
-                                  <i class="bi bi-star-fill"></i>
-                                  <i class="bi bi-star-fill"></i>
-                                  <i class="bi bi-star-fill"></i>
-                                  <i class="bi bi-star-fill"></i>
-                                </div>
-                                <p class="detail">
-                                  <span><i class="fa-solid fa-quote-left quots"></i></span>
-                                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                                  <span><i class="fa-solid fa-quote-right quote"></i></span>
-                                </p>
-                              </div>
-                            </div>
-
-                            <!-- Card 3 -->
-                              <div class="carousel-item" data-aos="fade-left">
-                                <div class="slider-card d-flex align-items-center flex-column">
-                                  <div class="profile-pic">
-                                    <img src="./testimonials/testimonials-3.jpg" alt="John Smith">
-                                  </div>
-                                  <h2>John Smith</h2>
-                                  <p>Product Manager</p>
-                                  <div class="rating">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                  </div>
-                                  <p class="detail">
-                                    <span><i class="fa-solid fa-quote-left quots"></i></span>
-                                    Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                                    <span><i class="fa-solid fa-quote-right quote"></i></span>
-                                  </p>
-                                </div>
-                              </div>
-                      </div>
+      <div class="slider-overlay"></div>
+      <div class="container">
+        <div class="slider-content-wrap">
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide carousel-fade"
+            data-bs-ride="carousel"
+            data-bs-interval="5000"
+            data-bs-pause="hover"
+          >
+            <!-- Carousel Items -->
+            <div class="carousel-inner">
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <div class="testimonial-slide">
+                  <div class="testimonial-avatar">
+                    <img
+                      src="./testimonials/testimonials-1.jpg"
+                      alt="Saul Goodman"
+                    />
+                  </div>
+                  <h3 class="testimonial-name">Saul Goodman</h3>
+                  <p class="testimonial-role">CEO &amp; Founder</p>
+                  <div class="testimonial-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="testimonial-quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                    Proin iaculis purus consequat sem cure dignissim donec
+                    porttitora entum suscipit rhoncus. Accusantium quam,
+                    ultricies eget id, aliquam eget nibh et. Maecen aliquam,
+                    risus at semper.
+                    <i class="fa-solid fa-quote-right"></i>
+                  </p>
                 </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                <div class="testimonial-slide">
+                  <div class="testimonial-avatar">
+                    <img
+                      src="./testimonials/testimonials-2.jpg"
+                      alt="Jane Doe"
+                    />
+                  </div>
+                  <h3 class="testimonial-name">Jane Doe</h3>
+                  <p class="testimonial-role">Marketing Lead</p>
+                  <div class="testimonial-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="testimonial-quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                    Export tempor illum tamen malis malis eram quae irure esse
+                    labore quem cillum quid cillum eram malis quorum velit fore
+                    eram velit sunt aliqua noster fugiat irure amet legam anim
+                    culpa.
+                    <i class="fa-solid fa-quote-right"></i>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carousel-item">
+                <div class="testimonial-slide">
+                  <div class="testimonial-avatar">
+                    <img
+                      src="./testimonials/testimonials-3.jpg"
+                      alt="John Smith"
+                    />
+                  </div>
+                  <h3 class="testimonial-name">John Smith</h3>
+                  <p class="testimonial-role">Product Manager</p>
+                  <div class="testimonial-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="testimonial-quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                    Enim nisi quem export duis labore cillum quae magna enim
+                    sint quorum nulla quem veniam duis minim tempor labore quem
+                    eram duis noster aute amet eram fore quis sint minim.
+                    <i class="fa-solid fa-quote-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Carousel Navigation Arrows -->
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev"
+              aria-label="Previous slide"
+            >
+              <i class="bi bi-chevron-left"></i>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next"
+              aria-label="Next slide"
+            >
+              <i class="bi bi-chevron-right"></i>
+            </button>
+
+            <!-- Custom Indicators -->
+            <div class="carousel-indicators-custom">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                class="active"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
             </div>
           </div>
         </div>
       </div>
     </section>
-<!-- Slider ends -->
 
-<!-- CHECK OUR PORTFOLIO -->
-    <section id="portfolio">
-      <!-- check title container -->
+    <!-- ==========================================================================
+         PORTFOLIO SECTION
+         ========================================================================== -->
+    <section id="portfolio" class="section-padding">
       <div class="container">
-        <div class="row">
-          <div class="check-port">
-            <!-- check heading -->
-            <div class="check" data-aos="fade-up">
-              <div class="svtext pt-lg-5 pt-md-5 pt-sm-4 pt-4">
-                <p class="sub-title d-flex align-items-center">PORTFOLIO</p>
-                  <h4 class="main-title fw-bold">CHECK OUR PORTFOLIO</h4>
-              </div>
-            </div>
-          </div>
+        <div class="section-header">
+          <span class="section-badge">Portfolio</span>
+          <h2 class="section-title">CHECK OUR PORTFOLIO</h2>
         </div>
-      </div>
-      <!-- check images container -->
-      <div class="container">
-        <div class="row">
-          <ul class="tabs nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="pills-all-tab" data-bs-toggle="pill" data-bs-target="#pills-all" type="button" role="tab" aria-controls="pills-all" aria-selected="true">All</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-app-tab" data-bs-toggle="pill" data-bs-target="#pills-app" type="button" role="tab" aria-controls="pills-app" aria-selected="false">App</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-product-tab" data-bs-toggle="pill" data-bs-target="#pills-product" type="button" role="tab" aria-controls="pills-product" aria-selected="false">Product</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-branding-tab" data-bs-toggle="pill" data-bs-target="#pills-branding" type="button" role="tab" aria-controls="pills-branding" aria-selected="false">Branding</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-books-tab" data-bs-toggle="pill" data-bs-target="#pills-books" type="button" role="tab" aria-controls="pills-books" aria-selected="false">Books</button>
-            </li>
-          </ul>
-          <!-- Tabs data -->
-          <div class="tab-content" id="pills-tabContent">
-            <!-- All Data -->
-            <div class="tab-pane fade show active" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab" tabindex="0">
-              <div class="tabgrid">
-                <div class="app1">
-                  <img src="./portfolio/app-1.jpg" alt="app-1" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">App 1</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
+
+        <!-- Filter Tabs -->
+        <ul class="portfolio-tabs nav" id="pills-tab" role="tablist">
+          <li role="presentation">
+            <button
+              class="portfolio-tab-btn active"
+              id="pills-all-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-all"
+              type="button"
+              role="tab"
+              aria-controls="pills-all"
+              aria-selected="true"
+            >
+              All
+            </button>
+          </li>
+          <li role="presentation">
+            <button
+              class="portfolio-tab-btn"
+              id="pills-app-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-app"
+              type="button"
+              role="tab"
+              aria-controls="pills-app"
+              aria-selected="false"
+            >
+              App
+            </button>
+          </li>
+          <li role="presentation">
+            <button
+              class="portfolio-tab-btn"
+              id="pills-product-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-product"
+              type="button"
+              role="tab"
+              aria-controls="pills-product"
+              aria-selected="false"
+            >
+              Product
+            </button>
+          </li>
+          <li role="presentation">
+            <button
+              class="portfolio-tab-btn"
+              id="pills-branding-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-branding"
+              type="button"
+              role="tab"
+              aria-controls="pills-branding"
+              aria-selected="false"
+            >
+              Branding
+            </button>
+          </li>
+          <li role="presentation">
+            <button
+              class="portfolio-tab-btn"
+              id="pills-books-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-books"
+              type="button"
+              role="tab"
+              aria-controls="pills-books"
+              aria-selected="false"
+            >
+              Books
+            </button>
+          </li>
+        </ul>
+
+        <!-- Tabs Content -->
+        <div class="tab-content" id="pills-tabContent">
+          <!-- All Data -->
+          <div
+            class="tab-pane fade show active"
+            id="pills-all"
+            role="tabpanel"
+            aria-labelledby="pills-all-tab"
+            tabindex="0"
+          >
+            <div class="portfolio-grid">
+              <div class="portfolio-item app1">
+                <img src="./portfolio/app-1.jpg" alt="App 1" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">App 1</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
                   </div>
-                </div>
-                <div class="app1 position-relative">
-                  <img src="./portfolio/product-1.jpg" alt="product-1" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Product 1</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/branding-1.jpg" alt="branding-1" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Branding 1</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/books-1.jpg" alt="books-1" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Book 1</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/app-2.jpg" alt="app-2" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">App 2</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/product-2.jpg" alt="product-2" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Product 2</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/branding-2.jpg" alt="branding-2" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Branding 2</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/books-2.jpg" alt="book-2" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Book 2</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/app-3.jpg" alt="app-3" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">App 3</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/product-3.jpg" alt="product3" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Product 3</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/branding-3.jpg" alt="branding-3" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Branding 3</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/books-3.jpg" alt="book-3" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Book 3</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
+                  <p class="portfolio-overlay-caption">
+                    Modern Mobile Application
+                  </p>
                 </div>
               </div>
-            </div>
-            <!-- App Data -->
-            <div class="tab-pane fade" id="pills-app" role="tabpanel" aria-labelledby="pills-app-tab" tabindex="0">
-              <div class="dapps">
-                <div class="app1">
-                  <img src="./portfolio/app-1.jpg" alt="app-1" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">App 1</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
+              <div class="portfolio-item app1">
+                <img src="./portfolio/product-1.jpg" alt="Product 1" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">Product 1</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
                   </div>
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/app-2.jpg" alt="app-2" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">App 2</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/app-3.jpg" alt="app-3" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">App 3</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
+                  <p class="portfolio-overlay-caption">
+                    Innovative Product Prototype
+                  </p>
                 </div>
               </div>
-            </div>
-            <!-- Product Data -->
-            <div class="tab-pane fade" id="pills-product" role="tabpanel" aria-labelledby="pills-product-tab" tabindex="0">
-              <div class="tabgrid">
-                <div class="app1 position-relative">
-                  <img src="./portfolio/product-1.jpg" alt="product-1" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Product 1</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
+              <div class="portfolio-item app1">
+                <img src="./portfolio/branding-1.jpg" alt="Branding 1" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">Branding 1</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
                   </div>
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/product-2.jpg" alt="product-2" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Product 2</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/product-3.jpg" alt="product3" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Product 3</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
+                  <p class="portfolio-overlay-caption">
+                    Corporate Brand Identity
+                  </p>
                 </div>
               </div>
-            </div>
-            <!-- Branding Data -->
-            <div class="tab-pane fade" id="pills-branding" role="tabpanel" aria-labelledby="pills-branding-tab" tabindex="0">
-              <div class="tabgrid">
-                <div class="app1">
-                  <img src="./portfolio/branding-1.jpg" alt="branding-1" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Branding 1</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
+              <div class="portfolio-item app1">
+                <img src="./portfolio/books-1.jpg" alt="Book 1" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">Book 1</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
                   </div>
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/branding-2.jpg" alt="branding-2" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Branding 2</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/branding-3.jpg" alt="branding-3" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Branding 3</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
-                  </div>
+                  <p class="portfolio-overlay-caption">Editorial Publication</p>
                 </div>
               </div>
-            </div>
-            <!-- Books Data -->
-            <div class="tab-pane fade" id="pills-books" role="tabpanel" aria-labelledby="pills-books-tab" tabindex="0">
-              <div class="tabgrid">
-                <div class="books1">
-                  <img src="./portfolio/books-1.jpg" alt="books-1" class="img-fluid">
-                </div>
-                <div class="app1">
-                  <img src="./portfolio/books-2.jpg" alt="book-2" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Book 2</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
+              <div class="portfolio-item app1">
+                <img src="./portfolio/app-2.jpg" alt="App 2" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">App 2</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
                   </div>
+                  <p class="portfolio-overlay-caption">Fintech Dashboard</p>
                 </div>
-                <div class="app1">
-                  <img src="./portfolio/books-3.jpg" alt="book-3" class="img-fluid">
-                  <!-- img card -->
-                  <div class="cards">
-                    <div class="cardbody">
-                      <button class="pfbtn">Book 3</button>
-                      <div class="zoomlink">
-                        <i class="bi bi-zoom-in zoomin"></i>
-                        <i class="bi bi-link-45deg link"></i>
-                      </div>
-                      <p class="cardtext">Lorem ipsum, dolor sit amet consectetur</p>
-                    </div>
+              </div>
+              <div class="portfolio-item app1">
+                <img src="./portfolio/product-2.jpg" alt="Product 2" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">Product 2</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
                   </div>
+                  <p class="portfolio-overlay-caption">Smart Tech Device</p>
+                </div>
+              </div>
+              <div class="portfolio-item app1">
+                <img src="./portfolio/branding-2.jpg" alt="Branding 2" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">Branding 2</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
+                  </div>
+                  <p class="portfolio-overlay-caption">
+                    Creative Design System
+                  </p>
+                </div>
+              </div>
+              <div class="portfolio-item app1">
+                <img src="./portfolio/books-2.jpg" alt="Book 2" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">Book 2</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
+                  </div>
+                  <p class="portfolio-overlay-caption">Artistic Catalog</p>
+                </div>
+              </div>
+              <div class="portfolio-item app1">
+                <img src="./portfolio/app-3.jpg" alt="App 3" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">App 3</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
+                  </div>
+                  <p class="portfolio-overlay-caption">
+                    Fitness Tracker Experience
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- App Data -->
+          <div
+            class="tab-pane fade"
+            id="pills-app"
+            role="tabpanel"
+            aria-labelledby="pills-app-tab"
+            tabindex="0"
+          >
+            <div class="portfolio-grid">
+              <div class="portfolio-item app1">
+                <img src="./portfolio/app-1.jpg" alt="App 1" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">App 1</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
+                  </div>
+                  <p class="portfolio-overlay-caption">
+                    Modern Mobile Application
+                  </p>
+                </div>
+              </div>
+              <div class="portfolio-item app1">
+                <img src="./portfolio/app-2.jpg" alt="App 2" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">App 2</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
+                  </div>
+                  <p class="portfolio-overlay-caption">Fintech Dashboard</p>
+                </div>
+              </div>
+              <div class="portfolio-item app1">
+                <img src="./portfolio/app-3.jpg" alt="App 3" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">App 3</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
+                  </div>
+                  <p class="portfolio-overlay-caption">
+                    Fitness Tracker Experience
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Data -->
+          <div
+            class="tab-pane fade"
+            id="pills-product"
+            role="tabpanel"
+            aria-labelledby="pills-product-tab"
+            tabindex="0"
+          >
+            <div class="portfolio-grid">
+              <div class="portfolio-item app1">
+                <img src="./portfolio/product-1.jpg" alt="Product 1" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">Product 1</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
+                  </div>
+                  <p class="portfolio-overlay-caption">
+                    Innovative Product Prototype
+                  </p>
+                </div>
+              </div>
+              <div class="portfolio-item app1">
+                <img src="./portfolio/product-2.jpg" alt="Product 2" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">Product 2</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
+                  </div>
+                  <p class="portfolio-overlay-caption">Smart Tech Device</p>
+                </div>
+              </div>
+              <div class="portfolio-item app1">
+                <img src="./portfolio/product-3.jpg" alt="Product 3" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">Product 3</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
+                  </div>
+                  <p class="portfolio-overlay-caption">Design Architecture</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Branding Data -->
+          <div
+            class="tab-pane fade"
+            id="pills-branding"
+            role="tabpanel"
+            aria-labelledby="pills-branding-tab"
+            tabindex="0"
+          >
+            <div class="portfolio-grid">
+              <div class="portfolio-item app1">
+                <img src="./portfolio/branding-1.jpg" alt="Branding 1" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">Branding 1</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
+                  </div>
+                  <p class="portfolio-overlay-caption">
+                    Corporate Brand Identity
+                  </p>
+                </div>
+              </div>
+              <div class="portfolio-item app1">
+                <img src="./portfolio/branding-2.jpg" alt="Branding 2" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">Branding 2</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
+                  </div>
+                  <p class="portfolio-overlay-caption">
+                    Creative Design System
+                  </p>
+                </div>
+              </div>
+              <div class="portfolio-item app1">
+                <img src="./portfolio/branding-3.jpg" alt="Branding 3" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">Branding 3</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
+                  </div>
+                  <p class="portfolio-overlay-caption">
+                    Typography &amp; Color System
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Books Data -->
+          <div
+            class="tab-pane fade"
+            id="pills-books"
+            role="tabpanel"
+            aria-labelledby="pills-books-tab"
+            tabindex="0"
+          >
+            <div class="portfolio-grid">
+              <div class="portfolio-item app1">
+                <img src="./portfolio/books-1.jpg" alt="Book 1" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">Book 1</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
+                  </div>
+                  <p class="portfolio-overlay-caption">Editorial Publication</p>
+                </div>
+              </div>
+              <div class="portfolio-item app1">
+                <img src="./portfolio/books-2.jpg" alt="Book 2" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">Book 2</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
+                  </div>
+                  <p class="portfolio-overlay-caption">Artistic Catalog</p>
+                </div>
+              </div>
+              <div class="portfolio-item app1">
+                <img src="./portfolio/books-3.jpg" alt="Book 3" />
+                <div class="portfolio-overlay">
+                  <span class="portfolio-overlay-tag">Book 3</span>
+                  <div class="portfolio-overlay-actions">
+                    <button
+                      class="portfolio-action-btn"
+                      aria-label="Zoom image"
+                    >
+                      <i class="bi bi-zoom-in"></i>
+                    </button>
+                    <button class="portfolio-action-btn" aria-label="Open link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
+                  </div>
+                  <p class="portfolio-overlay-caption">Luxury Lookbook</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- Tabs Data ends-->
       </div>
     </section>
-<!-- CHECK OUR PORTFOLIO Ends -->
 
-<!-- CHECK OUR TEAM -->
-    <section id="Team">
-      <div class="team-bg">
+    <!-- ==========================================================================
+         TEAM SECTION
+         ========================================================================== -->
+    <section id="Team" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Team</span>
+          <h2 class="section-title">CHECK OUR TEAM</h2>
+        </div>
+        <div class="team-grid">
+          <!-- Member 1 -->
+          <div class="team-card-wrapper team-1">
+            <div class="team-img-box">
+              <img
+                src="./team/team-1.jpg"
+                alt="Walter White"
+                class="team-img"
+              />
+            </div>
+            <div class="team-floating-card">
+              <div>
+                <h5 class="team-info-name">Walter White</h5>
+                <p class="team-info-role">Chief Executive Officer</p>
+              </div>
+              <div class="team-social-links">
+                <a href="https://x.com" aria-label="Twitter"
+                  ><i class="bi bi-twitter-x"></i
+                ></a>
+                <a href="https://facebook.com" aria-label="Facebook"
+                  ><i class="bi bi-facebook"></i
+                ></a>
+                <a href="https://instagram.com" aria-label="Instagram"
+                  ><i class="bi bi-instagram"></i
+                ></a>
+                <a href="https://linkedin.com" aria-label="LinkedIn"
+                  ><i class="bi bi-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="team-card-wrapper team-1">
+            <div class="team-img-box">
+              <img
+                src="./team/team-2.jpg"
+                alt="Sarah Jhonson"
+                class="team-img"
+              />
+            </div>
+            <div class="team-floating-card">
+              <div>
+                <h5 class="team-info-name">Sarah Jhonson</h5>
+                <p class="team-info-role">Product Manager</p>
+              </div>
+              <div class="team-social-links">
+                <a href="https://x.com" aria-label="Twitter"
+                  ><i class="bi bi-twitter-x"></i
+                ></a>
+                <a href="https://facebook.com" aria-label="Facebook"
+                  ><i class="bi bi-facebook"></i
+                ></a>
+                <a href="https://instagram.com" aria-label="Instagram"
+                  ><i class="bi bi-instagram"></i
+                ></a>
+                <a href="https://linkedin.com" aria-label="LinkedIn"
+                  ><i class="bi bi-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="team-card-wrapper team-1">
+            <div class="team-img-box">
+              <img
+                src="./team/team-3.jpg"
+                alt="William Anderson"
+                class="team-img"
+              />
+            </div>
+            <div class="team-floating-card">
+              <div>
+                <h5 class="team-info-name">William Anderson</h5>
+                <p class="team-info-role">Chief Technology Officer</p>
+              </div>
+              <div class="team-social-links">
+                <a href="https://x.com" aria-label="Twitter"
+                  ><i class="bi bi-twitter-x"></i
+                ></a>
+                <a href="https://facebook.com" aria-label="Facebook"
+                  ><i class="bi bi-facebook"></i
+                ></a>
+                <a href="https://instagram.com" aria-label="Instagram"
+                  ><i class="bi bi-instagram"></i
+                ></a>
+                <a href="https://linkedin.com" aria-label="LinkedIn"
+                  ><i class="bi bi-linkedin"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION
+         ========================================================================== -->
+    <section id="Contact" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Contact</span>
+          <h2 class="section-title">GET IN TOUCH WITH US</h2>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Contact Info Cards -->
+          <div class="contact-info-wrap">
+            <div class="contact-info-card">
+              <div class="contact-icon-bubble">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div>
+                <h5 class="contact-card-title">Our Address</h5>
+                <p class="contact-card-text">
+                  A108 Adam Street, New York, NY 535022
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-subcards-grid">
+              <div class="contact-info-card">
+                <div class="contact-icon-bubble">
+                  <i class="bi bi-telephone"></i>
+                </div>
+                <div>
+                  <h5 class="contact-card-title">Call Us</h5>
+                  <p class="contact-card-text">+1 5589 55488 55</p>
+                </div>
+              </div>
+
+              <div class="contact-info-card">
+                <div class="contact-icon-bubble">
+                  <i class="bi bi-envelope"></i>
+                </div>
+                <div>
+                  <h5 class="contact-card-title">Email Us</h5>
+                  <p class="contact-card-text">info@example.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-card">
+            <!-- Success Toast Alert -->
+            <div class="form-alert-toast" id="fmessage">
+              <i class="bi bi-check-circle-fill me-2"></i> Message sent
+              successfully! We will get back to you soon.
+            </div>
+
+            <form id="myform" onsubmit="return validateForm();">
+              <div class="form-row-two">
+                <div>
+                  <input
+                    type="text"
+                    id="name"
+                    class="form-control-custom"
+                    placeholder="Your Name"
+                  />
+                  <span id="nameError" class="form-error"></span>
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-control-custom"
+                    placeholder="Your Email"
+                  />
+                  <span id="emailError" class="form-error"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="subject"
+                  class="form-control-custom"
+                  placeholder="Subject"
+                />
+                <span id="subjectError" class="form-error"></span>
+              </div>
+              <div class="form-group">
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="form-control-custom"
+                  placeholder="Write your message here..."
+                ></textarea>
+                <span id="messageError" class="form-error"></span>
+              </div>
+              <button type="submit" class="btn-form-submit">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOOTER SECTION
+         ========================================================================== -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Col 1 -->
+          <div class="footer-brand footer-brand-col">
+            <h3>Dewi<span>.</span></h3>
+            <p class="footer-address">
+              A108 Adam Street, New York, NY 535022<br />
+              <strong>Phone:</strong> +1 5589 55488 55<br />
+              <strong>Email:</strong> info@example.com
+            </p>
+            <div class="footer-socials">
+              <a
+                href="https://x.com"
+                class="footer-social-btn"
+                aria-label="Twitter"
+                ><i class="bi bi-twitter-x"></i
+              ></a>
+              <a
+                href="https://facebook.com"
+                class="footer-social-btn"
+                aria-label="Facebook"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a
+                href="https://instagram.com"
+                class="footer-social-btn"
+                aria-label="Instagram"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a
+                href="https://linkedin.com"
+                class="footer-social-btn"
+                aria-label="LinkedIn"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Col 2 -->
+          <div class="footer-useful-links-col">
+            <h4 class="footer-col-title">Useful Links</h4>
+            <ul class="footer-links-list">
+              <li>
+                <a href="#hero"><i class="bi bi-chevron-right"></i> Home</a>
+              </li>
+              <li>
+                <a href="#about"
+                  ><i class="bi bi-chevron-right"></i> About Us</a
+                >
+              </li>
+              <li>
+                <a href="#service"
+                  ><i class="bi bi-chevron-right"></i> Services</a
+                >
+              </li>
+              <li>
+                <a href="#portfolio"
+                  ><i class="bi bi-chevron-right"></i> Portfolio</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="bi bi-chevron-right"></i> Terms of service</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="bi bi-chevron-right"></i> Privacy policy</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3 -->
+          <div class="footer-services-col">
+            <h4 class="footer-col-title">Our Services</h4>
+            <ul class="footer-links-list">
+              <li>
+                <a href="#service"
+                  ><i class="bi bi-chevron-right"></i> Web Design</a
+                >
+              </li>
+              <li>
+                <a href="#service"
+                  ><i class="bi bi-chevron-right"></i> Web Development</a
+                >
+              </li>
+              <li>
+                <a href="#service"
+                  ><i class="bi bi-chevron-right"></i> Product Management</a
+                >
+              </li>
+              <li>
+                <a href="#service"
+                  ><i class="bi bi-chevron-right"></i> Marketing Strategy</a
+                >
+              </li>
+              <li>
+                <a href="#service"
+                  ><i class="bi bi-chevron-right"></i> Graphic Design</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 4 -->
+          <div class="footer-newsletter-col">
+            <h4 class="footer-col-title">Our Newsletter</h4>
+            <p class="newsletter-text">
+              Subscribe to our newsletter and receive the latest insights and
+              news about our creative services!
+            </p>
+            <form class="newsletter-form" id="newsletterForm">
+              <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="Enter your email"
+                required
+              />
+              <button type="submit" id="newsletterBtn">Subscribe</button>
+            </form>
+            <div id="newsletterToast" class="newsletter-toast">
+              <i class="bi bi-check-circle-fill me-1"></i> Thank you for
+              subscribing!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
         <div class="container">
-          <div class="row">
-            <div class="check-port">
-              <!-- check heading -->
-              <div class="check" data-aos="fade-up">
-                <div class="svtext pt-lg-5 pt-md-5 pt-sm-4 pt-4">
-                  <p class="sub-title d-flex align-items-center">TEAM</p>
-                    <h4 class="main-title fw-bold">CHECK OUR TEAM</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- team container -->
-        <div class="container">
-          <div class="row">
-            <div class="team-member">
-              <!-- team member 1 -->
-              <div class="team-1 position-relative">
-                <img src="./team/team-1.jpg" alt="teams-1" class="team-img">
-                <!-- Card Overlay -->
-                <div class="team-card bg-white shadow">
-                  <div class="tcard-body">
-                    <h5 class="team-name">Walter White</h5>
-                    <h6 class="text-body-secondary">Chief Executive Officer</h6>
-                  </div>
-                  <div class="dlink">
-                    <a href="https://x.com/?lang=en" class="card-link"> <i class="bi bi-twitter-x ticon"></i> </a>
-                    <a href="https://www.instagram.com/" class="card-link"> <i class="bi bi-instagram ticon"></i> </a>
-                    <a href="https://www.facebook.com/" class="card-link"> <i class="bi bi-facebook ticon"></i> </a>
-                    <a href="https://www.linkedin.com/" class="card-link"> <i class="bi bi-linkedin ticon"></i> </a>
-                  </div>
-                </div>
-              </div>
-              <!-- team member 2 -->
-              <div class="team-1 position-relative">
-                <div class="dvime">
-                  <img src="./team/team-2.jpg" alt="teams-2" class="team-img">
-                  <!-- Card Overlay -->
-                  <div class="team-card bg-white shadow">
-                    <div class="tcard-body">
-                      <h5 class="team-name">Sarah Jhonson</h5>
-                      <h6 class="text-body-secondary">Product Manager</h6>
-                    </div>
-                    <div class="dlink">
-                      <a href="https://x.com/?lang=en" class="card-link"> <i class="bi bi-twitter-x ticon"></i> </a>
-                      <a href="https://www.instagram.com/" class="card-link"> <i class="bi bi-instagram ticon"></i> </a>
-                      <a href="https://www.facebook.com/" class="card-link"> <i class="bi bi-facebook ticon"></i> </a>
-                      <a href="https://www.linkedin.com/" class="card-link"> <i class="bi bi-linkedin ticon"></i> </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- team member 3 -->
-              <div class="team-1 position-relative">
-                <div class="dvimes">
-                  <img src="./team/team-3.jpg" alt="teams-3" class="team-img">
-                  <!-- Card Overlay -->
-                  <div class="team-card bg-white shadow">
-                    <div class="tcard-body">
-                      <h5 class="team-name">William Anderson</h5>
-                      <h6 class="text-body-secondary">CTO</h6>
-                    </div>
-                    <div class="dlink">
-                      <a href="https://x.com/?lang=en" class="card-link"> <i class="bi bi-twitter-x ticon"></i> </a>
-                      <a href="https://www.instagram.com/" class="card-link"> <i class="bi bi-instagram ticon"></i> </a>
-                      <a href="https://www.facebook.com/" class="card-link"> <i class="bi bi-facebook ticon"></i> </a>
-                      <a href="https://www.linkedin.com/" class="card-link"> <i class="bi bi-linkedin ticon"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- team-card -->
-          </div>
+          <p class="m-0">
+            &copy; <span id="currentYear"></span> <strong>Dewi</strong>. All
+            Rights Reserved. Designed with modern web standards and Framer
+            Motion.
+          </p>
         </div>
       </div>
-    </section> 
-<!-- CHECK OUR TEAM Ends -->
+    </footer>
 
-<!-- Contact  -->
-    <section id="Contact">
-      <div class="container">
-        <div class="row">
-          <!-- Check heading -->
-          <div class="check" data-aos="fade-up" data-aos-duration="3000">
-            <div class="svtext py-lg-5 py-md-5 py-sm-4 py-4">
-              <p class="sub-title d-flex align-items-center">CONTACT</p>
-              <h2 class="main-title fw-bold">NECESSITATIBUS EIUS CONSEQUATUR</h2>
-            </div>
-          </div>
-          <!-- form container -->
-          <div class="container">
-            <div class="row">
-              <div class="position-relative">
-              <!-- form submit message  -->
-              <div class="formMessage shadow" id="fmessage" style="display: none;">
-                <h5>Form Submit Successfully</h5>
-              </div>
-              <!-- form submit ends -->
-              <div class="form pb-lg-5 pb-md-5 pb-sm-3 pb-3">
-                <!-- address -->
-                <div class="newadres">
-                  <div class="address shadow" data-aos="fade-up" data-aos-duration="2500">
-                    <div class="adress">
-                      <i class="bi bi-geo-alt adicon"></i>
-                        <h5>Address</h5>
-                        <p>A108 Adam Street, New York, NY 535022</p>
-                    </div>
-                  </div>
-                  <!-- subadress -->
-                  <div class="subadress">
-                    <div class="adress shadow" data-aos="fade-up" data-aos-duration="500">
-                      <i class="bi bi-telephone adicon"></i>
-                      <h5>Call Us</h5>
-                      <p>+1 5589 55488 55</p>
-                    </div>            
-                    <div class="adress shadow" data-aos="fade-up" data-aos-duration="1000">
-                      <i class="bi bi-envelope adicon"></i>
-                      <h5>Email Us</h5>
-                      <p>info@example.com</p>
-                    </div>
-                  </div>
-                </div>
-                <!-- text fields -->
-                <div data-aos="fade-up" data-aos-duration="2000">
-                  <form class="contact-form shadow" id="myform" onsubmit="return validateForm()" style="padding: 12px;">
-                    <div class="tfl">
-                      <div class="col">
-                        <input type="text" id="name" placeholder="Your Name">
-                        <span id="nameError"></span>
-                      </div>
-                      <div class="col">
-                        <input type="text" id="email" placeholder="Your Email">
-                        <span id="emailError"></span>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <input type="text" id="subject" placeholder="Subject" >
-                      <span id="subjectError"></span>
-                    </div>
-                    <div class="form-group">
-                      <textarea class="txarea" id="message" rows="5" placeholder="Message"></textarea>
-                      <span id="messageError" class="error"></span>
-                    </div>
-                    <button type="submit" class="btn-send">Send message</button>
-                  </form>
-                </div>
-                <!--  -->
-              </div>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-<!-- Contact ends -->
+    <!-- Scroll To Top Button -->
+    <button id="scrollBtn" aria-label="Scroll to top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
 
-<!-- Footer -->
-    <section id="footer">
-      <div class="footer-bg">
-        <div class="footer-area d-flex align-items-center pb-3">
-          <div class="container">
-            <div class="row">
-              <!-- footer text -->
-              <div class="col-lg-4 col-md-3 col-sm-12 col-12">
-                <div class="main">
-                  <div class="home-area">
-                    <a href="index.html">Dewi</a>
-                    <div class="footer-para">
-                      <p>A108 Adam Street <br> New York, NY 535022</p>
-                      <p>Phone: +1 5589 55488 55 <br>Email: info@example.com</p>
-                    </div>
-                  </div>
-                  <div class="footer-link">
-                    <i class="bi bi-twitter-x fticon"></i>
-                    <i class="bi bi-facebook fticon"></i>
-                    <i class="bi bi-instagram fticon"></i>
-                    <i class="bi bi-linkedin fticon"></i>
-                  </div>
-                </div>
-              </div>
-              <!-- Useful Links -->
-              <div class="col-lg-2 col-md-3 col-sm-12 col-12">
-                <div class="useful-links">
-                  <h2>Useful Links</h2>
-                  <ul class="links">
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <a href="index.html">Home</a></li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                        <a href="#about">About</a>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                        <a href="#service">Services</a>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                        <a href="#">Terms of service</a>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                        <a href="#">Privacy policy</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <!-- Our Services -->
-              <div class="col-lg-2 col-md-3 col-sm-12 col-12">
-                <div class="useful-links" style="padding-top: 40px;">
-                  <h2>Our Services</h2>
-                  <ul class="links">
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                      <a href="#">Web Design</a></li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                        <a href="#">Web Development</a>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                        <a href="#">Product Management</a>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                        <a href="#">Marketing</a>
-                    </li>
-                    <li>
-                      <i class="bi bi-chevron-right"></i>
-                        <a href="#">Graphic Design</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <!-- Our Newsletter -->
-              <div class="col-lg-4">
-                <div class="our-text">
-                  <h2>Our Newsletter</h2>
-                  <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-                  <div class="input-field d-flex align-items-center">
-                    <input type="text">
-                    <button>Subscribe</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-<!-- scroll button -->
-    <button id="scrollBtn"> <i class="bi bi-arrow-up"></i> </button>
-
-<!-- Script files -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://kit.fontawesome.com/a68e403577.js" crossorigin="anonymous"></script>
+    <!-- Vendor Scripts -->
+    <script src="vendor/motion.js"></script>
+    <!-- Fallback CDN in case vendor script is missing -->
+    <script>
+      if (typeof Motion === "undefined") {
+        const cdnScript = document.createElement("script");
+        cdnScript.src =
+          "https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js";
+        document.head.appendChild(cdnScript);
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/a68e403577.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
     <script src="script.js"></script>
-    <script>AOS.init();</script>
-
   </body>
 </html>
